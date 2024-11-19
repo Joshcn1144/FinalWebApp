@@ -1007,3 +1007,468 @@ puma (6.4.3) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
   [1m[36mActiveRecord::InternalMetadata Load (8.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
   [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (7.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTruncate Tables (33.0ms)[0m  [1m[31mDELETE FROM "menus";
+DELETE FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::InternalMetadata Load (12.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 172.17.0.1 at 2024-11-19 03:46:41 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (10.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MenusController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering menus/index.html.erb within layouts/application
+  [1m[36mMenu Load (6.1ms)[0m  [1m[34mSELECT "menus".* FROM "menus"[0m
+  ↳ app/views/menus/index.html.erb:6
+  Rendered menus/index.html.erb within layouts/application (Duration: 299.8ms | Allocations: 2744)
+  Rendered layout layouts/application.html.erb (Duration: 2399.5ms | Allocations: 34696)
+Completed 200 OK in 3648ms (Views: 2529.1ms | ActiveRecord: 119.4ms | Allocations: 41260)
+
+
+Started GET "/menus/new" for 172.17.0.1 at 2024-11-19 03:46:48 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by MenusController#new as HTML
+Completed 401 Unauthorized in 146ms (ActiveRecord: 0.0ms | Allocations: 1284)
+
+
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-11-19 03:46:49 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 24.0ms | Allocations: 576)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 478.2ms | Allocations: 2736)
+  Rendered layout layouts/application.html.erb (Duration: 607.0ms | Allocations: 3903)
+Completed 200 OK in 847ms (Views: 708.6ms | ActiveRecord: 6.2ms | Allocations: 12675)
+
+
+Started GET "/users/sign_up" for 172.17.0.1 at 2024-11-19 03:46:53 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/users/password/new" for 172.17.0.1 at 2024-11-19 03:46:54 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 13.9ms | Allocations: 243)
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 82)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 108.8ms | Allocations: 1655)
+  Rendered layout layouts/application.html.erb (Duration: 239.5ms | Allocations: 2850)
+Completed 200 OK in 399ms (Views: 341.6ms | ActiveRecord: 0.0ms | Allocations: 3986)
+
+
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 119)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 30.3ms | Allocations: 871)
+  Rendered layout layouts/application.html.erb (Duration: 206.0ms | Allocations: 1978)
+Completed 200 OK in 359ms (Views: 216.2ms | ActiveRecord: 0.0ms | Allocations: 2863)
+
+
+Started GET "/users/sign_up" for 172.17.0.1 at 2024-11-19 03:46:56 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 70)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 11.5ms | Allocations: 894)
+  Rendered layout layouts/application.html.erb (Duration: 138.3ms | Allocations: 1998)
+Completed 200 OK in 186ms (Views: 142.7ms | ActiveRecord: 0.0ms | Allocations: 2562)
+
+
+Started GET "/users/password/new" for 172.17.0.1 at 2024-11-19 03:46:58 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/users/sign_up" for 172.17.0.1 at 2024-11-19 03:46:58 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 112)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 13.4ms | Allocations: 604)
+  Rendered layout layouts/application.html.erb (Duration: 156.4ms | Allocations: 1880)
+Completed 200 OK in 223ms (Views: 161.8ms | ActiveRecord: 0.0ms | Allocations: 2473)
+
+
+Started GET "/users/password/new" for 172.17.0.1 at 2024-11-19 03:46:59 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 70)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 10.4ms | Allocations: 896)
+  Rendered layout layouts/application.html.erb (Duration: 260.9ms | Allocations: 2042)
+Completed 200 OK in 306ms (Views: 265.5ms | ActiveRecord: 0.0ms | Allocations: 2647)
+
+
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 112)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 8.3ms | Allocations: 602)
+  Rendered layout layouts/application.html.erb (Duration: 161.3ms | Allocations: 1706)
+Completed 200 OK in 232ms (Views: 166.2ms | ActiveRecord: 0.0ms | Allocations: 2282)
+
+
+Started GET "/users/password/new" for 172.17.0.1 at 2024-11-19 03:47:00 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/users/sign_up" for 172.17.0.1 at 2024-11-19 03:47:00 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 112)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 9.6ms | Allocations: 728)
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 70)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 894)
+  Rendered layout layouts/application.html.erb (Duration: 160.7ms | Allocations: 3831)
+Completed 200 OK in 220ms (Views: 166.5ms | ActiveRecord: 0.0ms | Allocations: 4425)
+
+
+  Rendered layout layouts/application.html.erb (Duration: 166.9ms | Allocations: 2930)
+Completed 200 OK in 221ms (Views: 171.0ms | ActiveRecord: 0.0ms | Allocations: 3725)
+
+
+Started POST "/users/sign_in" for 172.17.0.1 at 2024-11-19 03:47:04 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"jc@msudenver.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "jc@msudenver.edu"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 198ms (ActiveRecord: 2.3ms | Allocations: 3614)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"jc@msudenver.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 500 Internal Server Error in 606ms (ActiveRecord: 0.0ms | Allocations: 1489)
+
+
+  
+NoMethodError (undefined method `encrypted_password=' for #<User id: nil, company_name: nil, name: nil, email: "jc@msudenver.edu", created_at: nil, updated_at: nil>):
+  
+activemodel (7.1.5) lib/active_model/attribute_methods.rb:511:in `method_missing'
+activerecord (7.1.5) lib/active_record/attribute_methods.rb:499:in `method_missing'
+devise (4.9.4) lib/devise/models/database_authenticatable.rb:67:in `password='
+activemodel (7.1.5) lib/active_model/attribute_assignment.rb:49:in `public_send'
+activemodel (7.1.5) lib/active_model/attribute_assignment.rb:49:in `_assign_attribute'
+activerecord (7.1.5) lib/active_record/attribute_assignment.rb:19:in `block in _assign_attributes'
+activerecord (7.1.5) lib/active_record/attribute_assignment.rb:11:in `each'
+activerecord (7.1.5) lib/active_record/attribute_assignment.rb:11:in `_assign_attributes'
+activemodel (7.1.5) lib/active_model/attribute_assignment.rb:34:in `assign_attributes'
+activerecord (7.1.5) lib/active_record/core.rb:453:in `initialize'
+devise (4.9.4) lib/devise/models/database_authenticatable.rb:45:in `initialize'
+activerecord (7.1.5) lib/active_record/inheritance.rb:76:in `new'
+activerecord (7.1.5) lib/active_record/inheritance.rb:76:in `new'
+devise (4.9.4) app/controllers/devise/sessions_controller.rb:11:in `new'
+actionpack (7.1.5) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.1.5) lib/abstract_controller/base.rb:224:in `process_action'
+actionpack (7.1.5) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.1.5) lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+activesupport (7.1.5) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+turbo-rails (2.0.11) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.11) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.1.5) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+actiontext (7.1.5) lib/action_text/rendering.rb:23:in `with_renderer'
+actiontext (7.1.5) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.1.5) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.1.5) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.5) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.5) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.5) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.5) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.5) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.5) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.5) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.5) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.5) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.5) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.5) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.5) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.5) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.5) lib/action_controller/metal.rb:293:in `block in action'
+devise (4.9.4) lib/devise/failure_app.rb:79:in `recall'
+devise (4.9.4) lib/devise/failure_app.rb:46:in `respond'
+actionpack (7.1.5) lib/abstract_controller/base.rb:224:in `process_action'
+actionpack (7.1.5) lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+activesupport (7.1.5) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+i18n (1.14.6) lib/i18n.rb:353:in `with_locale'
+devise (4.9.4) lib/devise/failure_app.rb:23:in `block in <class:FailureApp>'
+activesupport (7.1.5) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.1.5) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.5) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.5) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.5) lib/abstract_controller/base.rb:160:in `process'
+actionpack (7.1.5) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.5) lib/action_controller/metal.rb:293:in `block in action'
+devise (4.9.4) lib/devise/failure_app.rb:28:in `call'
+devise (4.9.4) lib/devise/delegator.rb:7:in `call'
+warden (1.2.9) lib/warden/manager.rb:143:in `call_failure_app'
+warden (1.2.9) lib/warden/manager.rb:129:in `process_unauthenticated'
+warden (1.2.9) lib/warden/manager.rb:44:in `call'
+rack (3.1.8) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.8) lib/rack/etag.rb:29:in `call'
+rack (3.1.8) lib/rack/conditional_get.rb:43:in `call'
+rack (3.1.8) lib/rack/head.rb:15:in `call'
+actionpack (7.1.5) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.5) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.5) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.5) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.5) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.5) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.5) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.5) lib/active_support/tagged_logging.rb:139:in `block in tagged'
+activesupport (7.1.5) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.5) lib/active_support/tagged_logging.rb:139:in `tagged'
+activesupport (7.1.5) lib/active_support/broadcast_logger.rb:241:in `method_missing'
+railties (7.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.1.5) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.5) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.5) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.5) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.5) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.5) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.5) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.5) lib/rails/engine.rb:536:in `call'
+puma (6.4.3) lib/puma/configuration.rb:272:in `call'
+puma (6.4.3) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.3) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.3) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.3) lib/puma/server.rb:464:in `process_client'
+puma (6.4.3) lib/puma/server.rb:245:in `block in run'
+puma (6.4.3) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/" for 172.17.0.1 at 2024-11-19 17:38:29 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (8.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MenusController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering menus/index.html.erb within layouts/application
+  [1m[36mMenu Load (9.7ms)[0m  [1m[34mSELECT "menus".* FROM "menus"[0m
+  ↳ app/views/menus/index.html.erb:6
+  Rendered menus/index.html.erb within layouts/application (Duration: 146.4ms | Allocations: 1577)
+  Rendered layout layouts/application.html.erb (Duration: 2016.2ms | Allocations: 33512)
+Completed 200 OK in 2672ms (Views: 1930.2ms | ActiveRecord: 173.0ms | Allocations: 40074)
+
+
+Started GET "/menus/new" for 172.17.0.1 at 2024-11-19 17:38:35 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by MenusController#new as HTML
+Completed 401 Unauthorized in 173ms (ActiveRecord: 0.0ms | Allocations: 2314)
+
+
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-11-19 17:38:36 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 15.1ms | Allocations: 576)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 153.5ms | Allocations: 2736)
+  Rendered layout layouts/application.html.erb (Duration: 282.1ms | Allocations: 3903)
+Completed 200 OK in 432ms (Views: 317.3ms | ActiveRecord: 13.5ms | Allocations: 12667)
+
+
+Started GET "/users/password/new" for 172.17.0.1 at 2024-11-19 17:38:38 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 30.6ms | Allocations: 221)
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 124)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 83.0ms | Allocations: 1150)
+  Rendered layout layouts/application.html.erb (Duration: 220.0ms | Allocations: 2257)
+Completed 200 OK in 324ms (Views: 230.0ms | ActiveRecord: 0.0ms | Allocations: 3143)
+
+
+Started POST "/users/sign_in" for 172.17.0.1 at 2024-11-19 17:38:41 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"jc@msudenver.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "jc@msudenver.edu"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 105ms (ActiveRecord: 2.0ms | Allocations: 3508)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"jc@msudenver.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 500 Internal Server Error in 509ms (ActiveRecord: 0.0ms | Allocations: 1489)
+
+
+  
+NoMethodError (undefined method `encrypted_password=' for #<User id: nil, company_name: nil, name: nil, email: "jc@msudenver.edu", created_at: nil, updated_at: nil>):
+  
+activemodel (7.1.5) lib/active_model/attribute_methods.rb:511:in `method_missing'
+activerecord (7.1.5) lib/active_record/attribute_methods.rb:499:in `method_missing'
+devise (4.9.4) lib/devise/models/database_authenticatable.rb:67:in `password='
+activemodel (7.1.5) lib/active_model/attribute_assignment.rb:49:in `public_send'
+activemodel (7.1.5) lib/active_model/attribute_assignment.rb:49:in `_assign_attribute'
+activerecord (7.1.5) lib/active_record/attribute_assignment.rb:19:in `block in _assign_attributes'
+activerecord (7.1.5) lib/active_record/attribute_assignment.rb:11:in `each'
+activerecord (7.1.5) lib/active_record/attribute_assignment.rb:11:in `_assign_attributes'
+activemodel (7.1.5) lib/active_model/attribute_assignment.rb:34:in `assign_attributes'
+activerecord (7.1.5) lib/active_record/core.rb:453:in `initialize'
+devise (4.9.4) lib/devise/models/database_authenticatable.rb:45:in `initialize'
+activerecord (7.1.5) lib/active_record/inheritance.rb:76:in `new'
+activerecord (7.1.5) lib/active_record/inheritance.rb:76:in `new'
+devise (4.9.4) app/controllers/devise/sessions_controller.rb:11:in `new'
+actionpack (7.1.5) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.1.5) lib/abstract_controller/base.rb:224:in `process_action'
+actionpack (7.1.5) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.1.5) lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+activesupport (7.1.5) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+turbo-rails (2.0.11) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.11) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.1.5) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+actiontext (7.1.5) lib/action_text/rendering.rb:23:in `with_renderer'
+actiontext (7.1.5) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.1.5) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.1.5) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.5) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.5) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.5) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.5) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.5) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.5) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.5) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.5) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.5) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.5) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.5) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.5) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.5) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.5) lib/action_controller/metal.rb:293:in `block in action'
+devise (4.9.4) lib/devise/failure_app.rb:79:in `recall'
+devise (4.9.4) lib/devise/failure_app.rb:46:in `respond'
+actionpack (7.1.5) lib/abstract_controller/base.rb:224:in `process_action'
+actionpack (7.1.5) lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+activesupport (7.1.5) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+i18n (1.14.6) lib/i18n.rb:353:in `with_locale'
+devise (4.9.4) lib/devise/failure_app.rb:23:in `block in <class:FailureApp>'
+activesupport (7.1.5) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.1.5) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.5) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.5) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.5) lib/abstract_controller/base.rb:160:in `process'
+actionpack (7.1.5) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.5) lib/action_controller/metal.rb:293:in `block in action'
+devise (4.9.4) lib/devise/failure_app.rb:28:in `call'
+devise (4.9.4) lib/devise/delegator.rb:7:in `call'
+warden (1.2.9) lib/warden/manager.rb:143:in `call_failure_app'
+warden (1.2.9) lib/warden/manager.rb:129:in `process_unauthenticated'
+warden (1.2.9) lib/warden/manager.rb:44:in `call'
+rack (3.1.8) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.8) lib/rack/etag.rb:29:in `call'
+rack (3.1.8) lib/rack/conditional_get.rb:43:in `call'
+rack (3.1.8) lib/rack/head.rb:15:in `call'
+actionpack (7.1.5) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.5) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.5) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.5) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.5) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.5) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.5) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.5) lib/active_support/tagged_logging.rb:139:in `block in tagged'
+activesupport (7.1.5) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.5) lib/active_support/tagged_logging.rb:139:in `tagged'
+activesupport (7.1.5) lib/active_support/broadcast_logger.rb:241:in `method_missing'
+railties (7.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.1.5) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.5) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.5) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.5) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.5) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.5) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.5) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.5) lib/rails/engine.rb:536:in `call'
+puma (6.4.3) lib/puma/configuration.rb:272:in `call'
+puma (6.4.3) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.3) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.3) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.3) lib/puma/server.rb:464:in `process_client'
+puma (6.4.3) lib/puma/server.rb:245:in `block in run'
+puma (6.4.3) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+  [1m[36mActiveRecord::SchemaMigration Load (6.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (16.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (6.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (6.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (5.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
