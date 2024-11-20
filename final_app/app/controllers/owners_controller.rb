@@ -1,4 +1,5 @@
 class OwnersController < ApplicationController
+  before_action :authenticate_owner!, except: [:index, :show]
   before_action :set_owner, only: %i[ show edit update destroy ]
 
   # GET /owners or /owners.json
