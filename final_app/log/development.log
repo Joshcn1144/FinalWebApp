@@ -1683,3 +1683,623 @@ Processing by OwnersController#index as TURBO_STREAM
 Completed 200 OK in 244ms (Views: 177.6ms | ActiveRecord: 5.1ms | Allocations: 2899)
 
 
+Started GET "/" for 172.17.0.1 at 2024-11-21 20:43:26 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (7.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OwnersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owners/index.html.erb within layouts/application
+  [1m[36mOwner Load (9.6ms)[0m  [1m[34mSELECT "owners".* FROM "owners"[0m
+  ↳ app/views/owners/index.html.erb:6
+  Rendered owners/_owner.html.erb (Duration: 24.4ms | Allocations: 221)
+  Rendered owners/_owner.html.erb (Duration: 0.3ms | Allocations: 13)
+  Rendered owners/index.html.erb within layouts/application (Duration: 381.9ms | Allocations: 11280)
+  Rendered layout layouts/application.html.erb (Duration: 2554.5ms | Allocations: 43613)
+Completed 200 OK in 7218ms (Views: 2579.4ms | ActiveRecord: 181.6ms | Allocations: 330568)
+
+
+Started GET "/owners/new" for 172.17.0.1 at 2024-11-21 20:43:57 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by OwnersController#new as HTML
+Completed 401 Unauthorized in 140ms (ActiveRecord: 0.0ms | Allocations: 2895)
+
+
+Started GET "/owners/new" for 172.17.0.1 at 2024-11-21 20:43:57 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/owners/sign_in" for 172.17.0.1 at 2024-11-21 20:43:57 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by OwnersController#new as HTML
+Completed 401 Unauthorized in 87ms (ActiveRecord: 0.0ms | Allocations: 409)
+
+
+Processing by Owners::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owners/sessions/new.html.erb within layouts/application
+  Rendered owners/shared/_links.html.erb (Duration: 23.2ms | Allocations: 573)
+  Rendered owners/sessions/new.html.erb within layouts/application (Duration: 225.4ms | Allocations: 2695)
+  Rendered layout layouts/application.html.erb (Duration: 380.0ms | Allocations: 3950)
+Completed 200 OK in 554ms (Views: 448.6ms | ActiveRecord: 0.0ms | Allocations: 5615)
+
+
+Started GET "/owners/sign_in" for 172.17.0.1 at 2024-11-21 20:43:59 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Owners::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owners/sessions/new.html.erb within layouts/application
+  Rendered owners/shared/_links.html.erb (Duration: 1.1ms | Allocations: 115)
+  Rendered owners/sessions/new.html.erb within layouts/application (Duration: 7.5ms | Allocations: 874)
+  Rendered layout layouts/application.html.erb (Duration: 171.8ms | Allocations: 2047)
+Completed 200 OK in 234ms (Views: 176.6ms | ActiveRecord: 0.0ms | Allocations: 2722)
+
+
+Started POST "/owners/sign_in" for 172.17.0.1 at 2024-11-21 20:44:01 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Owners::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "owner"=>{"email"=>"jc@msudenver.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mOwner Load (3.2ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."email" = ? ORDER BY "owners"."id" ASC LIMIT ?[0m  [["email", "jc@msudenver.edu"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 623ms (ActiveRecord: 3.1ms | Allocations: 3966)
+
+
+Processing by Owners::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "owner"=>{"email"=>"jc@msudenver.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering owners/sessions/new.html.erb within layouts/application
+  Rendered owners/shared/_links.html.erb (Duration: 0.3ms | Allocations: 115)
+  Rendered owners/sessions/new.html.erb within layouts/application (Duration: 5.8ms | Allocations: 873)
+  Rendered layout layouts/application.html.erb (Duration: 133.9ms | Allocations: 2016)
+Completed 200 OK in 596ms (Views: 137.7ms | ActiveRecord: 0.0ms | Allocations: 2592)
+
+
+Started GET "/owners/sign_up" for 172.17.0.1 at 2024-11-21 20:44:04 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Owners::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owners/registrations/new.html.erb within layouts/application
+  Rendered owners/shared/_error_messages.html.erb (Duration: 23.1ms | Allocations: 221)
+  Rendered owners/shared/_links.html.erb (Duration: 0.3ms | Allocations: 82)
+  Rendered owners/registrations/new.html.erb within layouts/application (Duration: 117.9ms | Allocations: 1592)
+  Rendered layout layouts/application.html.erb (Duration: 253.9ms | Allocations: 2790)
+Completed 200 OK in 364ms (Views: 308.4ms | ActiveRecord: 0.0ms | Allocations: 3824)
+
+
+Started POST "/owners" for 172.17.0.1 at 2024-11-21 20:44:17 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Owners::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "owner"=>{"email"=>"jc7@msudenver.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOwner Exists? (9.5ms)[0m  [1m[34mSELECT 1 AS one FROM "owners" WHERE "owners"."email" = ? LIMIT ?[0m  [["email", "jc7@msudenver.edu"], ["LIMIT", 1]]
+  [1m[36mOwner Create (1.7ms)[0m  [1m[32mINSERT INTO "owners" ("company_name", "name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["company_name", nil], ["name", nil], ["created_at", "2024-11-21 20:44:18.625386"], ["updated_at", "2024-11-21 20:44:18.625386"], ["email", "jc7@msudenver.edu"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (20.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/owners/5
+Completed 303 See Other in 613ms (ActiveRecord: 31.5ms | Allocations: 8265)
+
+
+Started GET "/owners/5" for 172.17.0.1 at 2024-11-21 20:44:18 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by OwnersController#show as TURBO_STREAM
+  Parameters: {"id"=>"5"}
+  [1m[36mOwner Load (10.0ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/owners_controller.rb:64:in `set_owner'
+  Rendering layout layouts/application.html.erb
+  Rendering owners/show.html.erb within layouts/application
+  Rendered owners/_owner.html.erb (Duration: 0.2ms | Allocations: 14)
+  Rendered owners/show.html.erb within layouts/application (Duration: 28.5ms | Allocations: 761)
+  [1m[36mOwner Load (1.2ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? ORDER BY "owners"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+  Rendered layout layouts/application.html.erb (Duration: 159.6ms | Allocations: 3394)
+Completed 500 Internal Server Error in 269ms (ActiveRecord: 11.2ms | Allocations: 4839)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `delete_owner_session_path' for #<ActionView::Base:0x0000000000d660>):
+    11:   </head>
+    12:   
+    13:   <% if owner_signed_in? %>
+    14:     <%= button_to "Sign Out", delete_owner_session_path, method: :delete %>
+    15:   <% else %>
+    16:     <%= link_to 'Sign In', new_owner_session_path %>
+    17:     <%= link_to 'Sign Up', new_owner_registration_path %>
+  
+app/views/layouts/application.html.erb:14
+Started GET "/" for 172.17.0.1 at 2024-11-21 20:46:09 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (10.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OwnersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owners/index.html.erb within layouts/application
+  [1m[36mOwner Load (10.0ms)[0m  [1m[34mSELECT "owners".* FROM "owners"[0m
+  ↳ app/views/owners/index.html.erb:6
+  Rendered owners/_owner.html.erb (Duration: 12.7ms | Allocations: 217)
+  Rendered owners/_owner.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered owners/_owner.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered owners/index.html.erb within layouts/application (Duration: 379.9ms | Allocations: 11447)
+  [1m[36mOwner Load (2.6ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? ORDER BY "owners"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+  Rendered layout layouts/application.html.erb (Duration: 2427.9ms | Allocations: 46054)
+Completed 200 OK in 6834ms (Views: 2436.9ms | ActiveRecord: 204.4ms | Allocations: 334869)
+
+
+Started DELETE "/owners/sign_out" for 172.17.0.1 at 2024-11-21 20:46:22 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Owners::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mOwner Load (1.9ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? ORDER BY "owners"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 193ms (ActiveRecord: 1.8ms | Allocations: 3311)
+
+
+Started GET "/" for 172.17.0.1 at 2024-11-21 20:46:23 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by OwnersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering owners/index.html.erb within layouts/application
+  [1m[36mOwner Load (1.8ms)[0m  [1m[34mSELECT "owners".* FROM "owners"[0m
+  ↳ app/views/owners/index.html.erb:6
+  Rendered owners/_owner.html.erb (Duration: 0.2ms | Allocations: 18)
+  Rendered owners/_owner.html.erb (Duration: 0.4ms | Allocations: 13)
+  Rendered owners/_owner.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered owners/index.html.erb within layouts/application (Duration: 21.0ms | Allocations: 1009)
+  Rendered layout layouts/application.html.erb (Duration: 151.7ms | Allocations: 2310)
+Completed 200 OK in 212ms (Views: 162.8ms | ActiveRecord: 1.8ms | Allocations: 2614)
+
+
+Started GET "/owners/sign_up" for 172.17.0.1 at 2024-11-21 20:46:26 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Owners::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owners/registrations/new.html.erb within layouts/application
+  Rendered owners/shared/_error_messages.html.erb (Duration: 24.7ms | Allocations: 228)
+  Rendered owners/shared/_links.html.erb (Duration: 20.2ms | Allocations: 523)
+  Rendered owners/registrations/new.html.erb within layouts/application (Duration: 268.6ms | Allocations: 3165)
+  Rendered layout layouts/application.html.erb (Duration: 398.2ms | Allocations: 4424)
+Completed 200 OK in 523ms (Views: 456.6ms | ActiveRecord: 0.0ms | Allocations: 5800)
+
+
+Started GET "/owners/sign_up" for 172.17.0.1 at 2024-11-21 20:46:28 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Owners::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owners/registrations/new.html.erb within layouts/application
+  Rendered owners/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 13)
+  Rendered owners/shared/_links.html.erb (Duration: 0.4ms | Allocations: 70)
+  Rendered owners/registrations/new.html.erb within layouts/application (Duration: 9.3ms | Allocations: 896)
+  Rendered layout layouts/application.html.erb (Duration: 139.7ms | Allocations: 2073)
+Completed 200 OK in 197ms (Views: 144.2ms | ActiveRecord: 0.0ms | Allocations: 2642)
+
+
+Started POST "/owners" for 172.17.0.1 at 2024-11-21 20:46:41 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Owners::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "owner"=>{"email"=>"jc7@msudenver.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOwner Exists? (11.1ms)[0m  [1m[34mSELECT 1 AS one FROM "owners" WHERE "owners"."email" = ? LIMIT ?[0m  [["email", "jc7@msudenver.edu"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering owners/registrations/new.html.erb within layouts/application
+  Rendered owners/shared/_error_messages.html.erb (Duration: 4.2ms | Allocations: 457)
+  Rendered owners/shared/_links.html.erb (Duration: 0.2ms | Allocations: 70)
+  Rendered owners/registrations/new.html.erb within layouts/application (Duration: 14.8ms | Allocations: 1784)
+  Rendered layout layouts/application.html.erb (Duration: 152.6ms | Allocations: 2972)
+Completed 422 Unprocessable Content in 922ms (Views: 155.8ms | ActiveRecord: 12.2ms | Allocations: 9749)
+
+
+Started POST "/owners" for 172.17.0.1 at 2024-11-21 20:46:52 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Owners::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "owner"=>{"email"=>"jc9@msudenver.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOwner Exists? (6.1ms)[0m  [1m[34mSELECT 1 AS one FROM "owners" WHERE "owners"."email" = ? LIMIT ?[0m  [["email", "jc9@msudenver.edu"], ["LIMIT", 1]]
+  [1m[36mOwner Create (2.5ms)[0m  [1m[32mINSERT INTO "owners" ("company_name", "name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["company_name", nil], ["name", nil], ["created_at", "2024-11-21 20:46:53.233654"], ["updated_at", "2024-11-21 20:46:53.233654"], ["email", "jc9@msudenver.edu"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (41.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/owners/6
+Completed 303 See Other in 554ms (ActiveRecord: 49.6ms | Allocations: 6864)
+
+
+Started GET "/owners/6" for 172.17.0.1 at 2024-11-21 20:46:53 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by OwnersController#show as TURBO_STREAM
+  Parameters: {"id"=>"6"}
+  [1m[36mOwner Load (105.9ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/owners_controller.rb:64:in `set_owner'
+  Rendering layout layouts/application.html.erb
+  Rendering owners/show.html.erb within layouts/application
+  Rendered owners/_owner.html.erb (Duration: 0.2ms | Allocations: 14)
+  Rendered owners/show.html.erb within layouts/application (Duration: 32.5ms | Allocations: 671)
+  [1m[36mOwner Load (0.9ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? ORDER BY "owners"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+  Rendered layout layouts/application.html.erb (Duration: 170.9ms | Allocations: 2459)
+Completed 200 OK in 410ms (Views: 175.9ms | ActiveRecord: 106.7ms | Allocations: 3837)
+
+
+Started DELETE "/owners/sign_out" for 172.17.0.1 at 2024-11-21 20:47:02 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Owners::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mOwner Load (2.3ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? ORDER BY "owners"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 104ms (ActiveRecord: 2.5ms | Allocations: 1677)
+
+
+Started GET "/" for 172.17.0.1 at 2024-11-21 20:47:03 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by OwnersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering owners/index.html.erb within layouts/application
+  [1m[36mOwner Load (0.7ms)[0m  [1m[34mSELECT "owners".* FROM "owners"[0m
+  ↳ app/views/owners/index.html.erb:6
+  Rendered owners/_owner.html.erb (Duration: 0.2ms | Allocations: 18)
+  Rendered owners/_owner.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered owners/_owner.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered owners/_owner.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered owners/index.html.erb within layouts/application (Duration: 23.3ms | Allocations: 1089)
+  Rendered layout layouts/application.html.erb (Duration: 154.0ms | Allocations: 2297)
+Completed 200 OK in 204ms (Views: 157.6ms | ActiveRecord: 0.7ms | Allocations: 2588)
+
+
+Started GET "/owners/3" for 172.17.0.1 at 2024-11-21 20:47:09 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by OwnersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mOwner Load (0.7ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owners_controller.rb:64:in `set_owner'
+  Rendering layout layouts/application.html.erb
+  Rendering owners/show.html.erb within layouts/application
+  Rendered owners/_owner.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered owners/show.html.erb within layouts/application (Duration: 5.6ms | Allocations: 449)
+  Rendered layout layouts/application.html.erb (Duration: 133.1ms | Allocations: 1648)
+Completed 200 OK in 185ms (Views: 136.8ms | ActiveRecord: 0.7ms | Allocations: 2248)
+
+
+Started GET "/owners/6" for 172.17.0.1 at 2024-11-21 20:47:10 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by OwnersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mOwner Load (1.1ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/owners_controller.rb:64:in `set_owner'
+  Rendering layout layouts/application.html.erb
+  Rendering owners/show.html.erb within layouts/application
+  Rendered owners/_owner.html.erb (Duration: 0.4ms | Allocations: 14)
+  Rendered owners/show.html.erb within layouts/application (Duration: 6.1ms | Allocations: 446)
+  Rendered layout layouts/application.html.erb (Duration: 143.5ms | Allocations: 1645)
+Completed 200 OK in 202ms (Views: 148.2ms | ActiveRecord: 1.1ms | Allocations: 2243)
+
+
+Started GET "/owners" for 172.17.0.1 at 2024-11-21 20:47:12 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started DELETE "/owners/6" for 172.17.0.1 at 2024-11-21 20:47:12 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by OwnersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owners/index.html.erb within layouts/application
+  [1m[36mOwner Load (1.1ms)[0m  [1m[34mSELECT "owners".* FROM "owners"[0m
+  ↳ app/views/owners/index.html.erb:6
+  Rendered owners/_owner.html.erb (Duration: 0.5ms | Allocations: 18)
+  Rendered owners/_owner.html.erb (Duration: 0.3ms | Allocations: 13)
+  Rendered owners/_owner.html.erb (Duration: 0.2ms | Allocations: 13)
+  Rendered owners/_owner.html.erb (Duration: 0.4ms | Allocations: 13)
+  Rendered owners/index.html.erb within layouts/application (Duration: 45.9ms | Allocations: 1082)
+  Rendered layout layouts/application.html.erb (Duration: 215.5ms | Allocations: 2405)
+Completed 200 OK in 280ms (Views: 219.7ms | ActiveRecord: 1.0ms | Allocations: 2696)
+
+
+Processing by OwnersController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"6"}
+Completed 401 Unauthorized in 68ms (ActiveRecord: 0.0ms | Allocations: 367)
+
+
+Started GET "/owners/sign_in" for 172.17.0.1 at 2024-11-21 20:47:13 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Owners::SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering owners/sessions/new.html.erb within layouts/application
+  Rendered owners/shared/_links.html.erb (Duration: 0.5ms | Allocations: 134)
+  Rendered owners/sessions/new.html.erb within layouts/application (Duration: 95.0ms | Allocations: 3524)
+  Rendered layout layouts/application.html.erb (Duration: 213.6ms | Allocations: 4708)
+Completed 200 OK in 318ms (Views: 265.3ms | ActiveRecord: 0.0ms | Allocations: 5664)
+
+
+Started GET "/owners/password/new" for 172.17.0.1 at 2024-11-21 20:47:15 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Owners::PasswordsController#new as HTML
+Started GET "/owners/sign_up" for 172.17.0.1 at 2024-11-21 20:47:16 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  Rendering layout layouts/application.html.erb
+  Rendering owners/passwords/new.html.erb within layouts/application
+  Rendered owners/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered owners/shared/_links.html.erb (Duration: 0.6ms | Allocations: 119)
+  Rendered owners/passwords/new.html.erb within layouts/application (Duration: 27.2ms | Allocations: 879)
+  Rendered layout layouts/application.html.erb (Duration: 154.4ms | Allocations: 2210)
+Completed 200 OK in 341ms (Views: 168.7ms | ActiveRecord: 0.0ms | Allocations: 5222)
+
+
+Processing by Owners::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owners/registrations/new.html.erb within layouts/application
+  Rendered owners/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered owners/shared/_links.html.erb (Duration: 1.0ms | Allocations: 70)
+  Rendered owners/registrations/new.html.erb within layouts/application (Duration: 10.7ms | Allocations: 896)
+  Rendered layout layouts/application.html.erb (Duration: 178.7ms | Allocations: 2076)
+Completed 200 OK in 240ms (Views: 184.8ms | ActiveRecord: 0.0ms | Allocations: 2663)
+
+
+Started GET "/owners/sign_up" for 172.17.0.1 at 2024-11-21 20:47:17 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Owners::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owners/registrations/new.html.erb within layouts/application
+  Rendered owners/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered owners/shared/_links.html.erb (Duration: 2.0ms | Allocations: 70)
+  Rendered owners/registrations/new.html.erb within layouts/application (Duration: 16.7ms | Allocations: 896)
+  Rendered layout layouts/application.html.erb (Duration: 134.2ms | Allocations: 2073)
+Completed 200 OK in 195ms (Views: 138.0ms | ActiveRecord: 0.0ms | Allocations: 2669)
+
+
+Started GET "/owners/sign_up" for 172.17.0.1 at 2024-11-21 20:47:19 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Owners::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owners/registrations/new.html.erb within layouts/application
+  Rendered owners/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered owners/shared/_links.html.erb (Duration: 0.3ms | Allocations: 70)
+  Rendered owners/registrations/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 896)
+  Rendered layout layouts/application.html.erb (Duration: 149.6ms | Allocations: 2073)
+Completed 200 OK in 190ms (Views: 154.7ms | ActiveRecord: 0.0ms | Allocations: 2665)
+
+
+Started GET "/owners/sign_up" for 172.17.0.1 at 2024-11-21 20:47:21 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/owners/password/new" for 172.17.0.1 at 2024-11-21 20:47:21 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Owners::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owners/registrations/new.html.erb within layouts/application
+  Rendered owners/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered owners/shared/_links.html.erb (Duration: 0.6ms | Allocations: 70)
+  Rendered owners/registrations/new.html.erb within layouts/application (Duration: 14.3ms | Allocations: 898)
+  Rendered layout layouts/application.html.erb (Duration: 164.9ms | Allocations: 2124)
+Completed 200 OK in 222ms (Views: 168.9ms | ActiveRecord: 0.0ms | Allocations: 2717)
+
+
+Processing by Owners::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owners/passwords/new.html.erb within layouts/application
+  Rendered owners/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered owners/shared/_links.html.erb (Duration: 0.7ms | Allocations: 112)
+  Rendered owners/passwords/new.html.erb within layouts/application (Duration: 11.4ms | Allocations: 604)
+  Rendered layout layouts/application.html.erb (Duration: 201.8ms | Allocations: 1781)
+Completed 200 OK in 294ms (Views: 206.6ms | ActiveRecord: 0.0ms | Allocations: 2338)
+
+
+Started GET "/" for 172.17.0.1 at 2024-11-22 01:08:30 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (25.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OwnersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owners/index.html.erb within layouts/application
+  [1m[36mOwner Load (17.2ms)[0m  [1m[34mSELECT "owners".* FROM "owners"[0m
+  ↳ app/views/owners/index.html.erb:6
+  Rendered owners/_owner.html.erb (Duration: 23.5ms | Allocations: 221)
+  Rendered owners/_owner.html.erb (Duration: 0.2ms | Allocations: 13)
+  Rendered owners/_owner.html.erb (Duration: 0.3ms | Allocations: 13)
+  Rendered owners/_owner.html.erb (Duration: 0.4ms | Allocations: 13)
+  Rendered owners/index.html.erb within layouts/application (Duration: 465.2ms | Allocations: 10357)
+  Rendered layout layouts/application.html.erb (Duration: 3550.6ms | Allocations: 42745)
+Completed 200 OK in 11271ms (Views: 3335.6ms | ActiveRecord: 317.4ms | Allocations: 329706)
+
+
+Started GET "/owners/sign_up" for 172.17.0.1 at 2024-11-22 01:08:50 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Owners::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owners/registrations/new.html.erb within layouts/application
+  Rendered owners/shared/_error_messages.html.erb (Duration: 7.2ms | Allocations: 228)
+  Rendered owners/shared/_links.html.erb (Duration: 7.8ms | Allocations: 522)
+  Rendered owners/registrations/new.html.erb within layouts/application (Duration: 85.1ms | Allocations: 3414)
+  Rendered layout layouts/application.html.erb (Duration: 132.0ms | Allocations: 4673)
+Completed 200 OK in 213ms (Views: 153.2ms | ActiveRecord: 0.0ms | Allocations: 7095)
+
+
+Started GET "/owners/sign_in" for 172.17.0.1 at 2024-11-22 01:09:04 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Owners::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owners/sessions/new.html.erb within layouts/application
+  Rendered owners/shared/_links.html.erb (Duration: 0.4ms | Allocations: 134)
+  Rendered owners/sessions/new.html.erb within layouts/application (Duration: 20.3ms | Allocations: 1443)
+  Rendered layout layouts/application.html.erb (Duration: 60.4ms | Allocations: 2622)
+Completed 200 OK in 103ms (Views: 78.2ms | ActiveRecord: 0.0ms | Allocations: 3880)
+
+
+Started POST "/owners" for 172.17.0.1 at 2024-11-22 01:09:05 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Owners::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "owner"=>{"email"=>"jc9@msudenver.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOwner Exists? (4.9ms)[0m  [1m[34mSELECT 1 AS one FROM "owners" WHERE "owners"."email" = ? LIMIT ?[0m  [["email", "jc9@msudenver.edu"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering owners/registrations/new.html.erb within layouts/application
+  Rendered owners/shared/_error_messages.html.erb (Duration: 1.5ms | Allocations: 476)
+  Rendered owners/shared/_links.html.erb (Duration: 0.2ms | Allocations: 70)
+  Rendered owners/registrations/new.html.erb within layouts/application (Duration: 6.3ms | Allocations: 1804)
+  Rendered layout layouts/application.html.erb (Duration: 65.3ms | Allocations: 2978)
+Completed 422 Unprocessable Content in 462ms (Views: 73.3ms | ActiveRecord: 5.5ms | Allocations: 11168)
+
+
+Started POST "/owners" for 172.17.0.1 at 2024-11-22 01:09:16 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Owners::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "owner"=>{"email"=>"jc10@msudenver.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOwner Exists? (4.5ms)[0m  [1m[34mSELECT 1 AS one FROM "owners" WHERE "owners"."email" = ? LIMIT ?[0m  [["email", "jc10@msudenver.edu"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering owners/registrations/new.html.erb within layouts/application
+  Rendered owners/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 413)
+  Rendered owners/shared/_links.html.erb (Duration: 0.2ms | Allocations: 70)
+  Rendered owners/registrations/new.html.erb within layouts/application (Duration: 7.8ms | Allocations: 1748)
+  Rendered layout layouts/application.html.erb (Duration: 51.9ms | Allocations: 2936)
+Completed 422 Unprocessable Content in 360ms (Views: 53.8ms | ActiveRecord: 5.3ms | Allocations: 7854)
+
+
+Started POST "/owners" for 172.17.0.1 at 2024-11-22 01:09:27 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Owners::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "owner"=>{"email"=>"jc10@msudenver.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOwner Exists? (5.3ms)[0m  [1m[34mSELECT 1 AS one FROM "owners" WHERE "owners"."email" = ? LIMIT ?[0m  [["email", "jc10@msudenver.edu"], ["LIMIT", 1]]
+  [1m[36mOwner Create (0.6ms)[0m  [1m[32mINSERT INTO "owners" ("company_name", "name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["company_name", nil], ["name", nil], ["created_at", "2024-11-22 01:09:27.955650"], ["updated_at", "2024-11-22 01:09:27.955650"], ["email", "jc10@msudenver.edu"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (404.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/owners/7
+Completed 303 See Other in 729ms (ActiveRecord: 410.5ms | Allocations: 7068)
+
+
+Started GET "/owners/7" for 172.17.0.1 at 2024-11-22 01:09:28 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by OwnersController#show as TURBO_STREAM
+  Parameters: {"id"=>"7"}
+  [1m[36mOwner Load (7.6ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/owners_controller.rb:64:in `set_owner'
+  Rendering layout layouts/application.html.erb
+  Rendering owners/show.html.erb within layouts/application
+  Rendered owners/_owner.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered owners/show.html.erb within layouts/application (Duration: 10.1ms | Allocations: 744)
+  [1m[36mOwner Load (0.6ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? ORDER BY "owners"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+  Rendered layout layouts/application.html.erb (Duration: 64.7ms | Allocations: 2758)
+Completed 200 OK in 106ms (Views: 67.1ms | ActiveRecord: 8.2ms | Allocations: 4225)
+
+
+Started GET "/owners/7/edit" for 172.17.0.1 at 2024-11-22 01:09:30 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by OwnersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mOwner Load (0.5ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? ORDER BY "owners"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOwner Load (0.8ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/owners_controller.rb:64:in `set_owner'
+  Rendering layout layouts/application.html.erb
+  Rendering owners/edit.html.erb within layouts/application
+  Rendered owners/_form.html.erb (Duration: 9.5ms | Allocations: 1082)
+  Rendered owners/edit.html.erb within layouts/application (Duration: 32.9ms | Allocations: 1401)
+  Rendered layout layouts/application.html.erb (Duration: 92.5ms | Allocations: 2613)
+Completed 200 OK in 142ms (Views: 95.5ms | ActiveRecord: 1.2ms | Allocations: 4549)
+
+
+Started PATCH "/owners/7" for 172.17.0.1 at 2024-11-22 01:09:39 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by OwnersController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "owner"=>{"company_name"=>"Changs", "name"=>"Josh"}, "commit"=>"Update Owner", "id"=>"7"}
+  [1m[36mOwner Load (0.5ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? ORDER BY "owners"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOwner Load (0.6ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/owners_controller.rb:64:in `set_owner'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owners_controller.rb:41:in `block in update'
+  [1m[36mOwner Update (3.5ms)[0m  [1m[33mUPDATE "owners" SET "company_name" = ?, "name" = ?, "updated_at" = ? WHERE "owners"."id" = ?[0m  [["company_name", "Changs"], ["name", "Josh"], ["updated_at", "2024-11-22 01:09:39.630035"], ["id", 7]]
+  ↳ app/controllers/owners_controller.rb:41:in `block in update'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/owners_controller.rb:41:in `block in update'
+Redirected to http://localhost:3000/owners/7
+Completed 302 Found in 32ms (ActiveRecord: 5.4ms | Allocations: 3841)
+
+
+Started GET "/owners/7" for 172.17.0.1 at 2024-11-22 01:09:39 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by OwnersController#show as TURBO_STREAM
+  Parameters: {"id"=>"7"}
+  [1m[36mOwner Load (2.5ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/owners_controller.rb:64:in `set_owner'
+  Rendering layout layouts/application.html.erb
+  Rendering owners/show.html.erb within layouts/application
+  Rendered owners/_owner.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered owners/show.html.erb within layouts/application (Duration: 2.2ms | Allocations: 476)
+  [1m[36mOwner Load (0.6ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? ORDER BY "owners"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+  Rendered layout layouts/application.html.erb (Duration: 56.1ms | Allocations: 2265)
+Completed 200 OK in 80ms (Views: 57.7ms | ActiveRecord: 3.0ms | Allocations: 2861)
+
+
+Started GET "/owners" for 172.17.0.1 at 2024-11-22 01:09:41 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by OwnersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owners/index.html.erb within layouts/application
+  [1m[36mOwner Load (0.7ms)[0m  [1m[34mSELECT "owners".* FROM "owners"[0m
+  ↳ app/views/owners/index.html.erb:6
+  Rendered owners/_owner.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered owners/_owner.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered owners/_owner.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered owners/_owner.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered owners/_owner.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered owners/index.html.erb within layouts/application (Duration: 11.6ms | Allocations: 1219)
+  [1m[36mOwner Load (0.6ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? ORDER BY "owners"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+  Rendered layout layouts/application.html.erb (Duration: 62.4ms | Allocations: 3013)
+Completed 200 OK in 82ms (Views: 62.8ms | ActiveRecord: 1.2ms | Allocations: 3271)
+
+
+Started GET "/owners/7/edit" for 172.17.0.1 at 2024-11-22 01:09:50 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by OwnersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mOwner Load (0.6ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? ORDER BY "owners"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOwner Load (0.7ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/owners_controller.rb:64:in `set_owner'
+  Rendering layout layouts/application.html.erb
+  Rendering owners/edit.html.erb within layouts/application
+  Rendered owners/_form.html.erb (Duration: 2.6ms | Allocations: 582)
+  Rendered owners/edit.html.erb within layouts/application (Duration: 4.0ms | Allocations: 686)
+  Rendered layout layouts/application.html.erb (Duration: 48.4ms | Allocations: 1905)
+Completed 200 OK in 77ms (Views: 50.4ms | ActiveRecord: 1.2ms | Allocations: 3780)
+
+
+Started DELETE "/owners/7" for 172.17.0.1 at 2024-11-22 01:09:52 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by OwnersController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"7"}
+  [1m[36mOwner Load (0.7ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? ORDER BY "owners"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOwner Load (0.6ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/owners_controller.rb:64:in `set_owner'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owners_controller.rb:53:in `destroy'
+  [1m[36mMenu Load (0.1ms)[0m  [1m[34mSELECT "menus".* FROM "menus" WHERE "menus"."owner_id" = ?[0m  [["owner_id", 7]]
+  ↳ app/controllers/owners_controller.rb:53:in `destroy'
+  [1m[36mOwner Destroy (0.7ms)[0m  [1m[31mDELETE FROM "owners" WHERE "owners"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/owners_controller.rb:53:in `destroy'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/owners_controller.rb:53:in `destroy'
+Redirected to http://localhost:3000/owners
+Completed 303 See Other in 139ms (ActiveRecord: 7.6ms | Allocations: 9897)
+
+
+Started GET "/owners" for 172.17.0.1 at 2024-11-22 01:09:52 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by OwnersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering owners/index.html.erb within layouts/application
+  [1m[36mOwner Load (2.9ms)[0m  [1m[34mSELECT "owners".* FROM "owners"[0m
+  ↳ app/views/owners/index.html.erb:6
+  Rendered owners/_owner.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered owners/_owner.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered owners/_owner.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered owners/_owner.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered owners/index.html.erb within layouts/application (Duration: 11.7ms | Allocations: 1112)
+  [1m[36mOwner Load (0.5ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? ORDER BY "owners"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+  Rendered layout layouts/application.html.erb (Duration: 59.2ms | Allocations: 2853)
+Completed 200 OK in 89ms (Views: 58.2ms | ActiveRecord: 3.4ms | Allocations: 3113)
+
+
+Started GET "/owners/3" for 172.17.0.1 at 2024-11-22 01:09:54 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by OwnersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mOwner Load (0.7ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owners_controller.rb:64:in `set_owner'
+  Rendering layout layouts/application.html.erb
+  Rendering owners/show.html.erb within layouts/application
+  Rendered owners/_owner.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered owners/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 437)
+  Rendered layout layouts/application.html.erb (Duration: 46.7ms | Allocations: 1636)
+Completed 200 OK in 69ms (Views: 48.8ms | ActiveRecord: 0.7ms | Allocations: 2228)
+
+

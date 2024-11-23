@@ -11,7 +11,7 @@
   </head>
   
   <% if owner_signed_in? %>
-    <%= button_to "Sign Out", destroy_owner_session_path, method: :destroy %>
+    <%= button_to "Sign Out", destroy_owner_session_path, method: :delete %>
   <% else %>
     <%= link_to 'Sign In', new_owner_session_path %>
     <%= link_to 'Sign Up', new_owner_registration_path %>

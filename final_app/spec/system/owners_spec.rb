@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Owners", type: :system do
   before do
-    driven_by(:rack_test)
+    #driven_by(:rack_test)
   end
 
   pending "add some scenarios (or delete) #{__FILE__}"
