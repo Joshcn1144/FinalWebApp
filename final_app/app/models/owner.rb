@@ -3,7 +3,7 @@ class Owner < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
     devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
 
-    has_many :menus, dependent: :destroy
+    has_many :base_menus, dependent: :destroy
 
     #validates :company_name, presence: true
     #validates :name, presence: true

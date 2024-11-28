@@ -1,0 +1,26 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @base_menu %>
+<h2>Menu Items</h2>
+<ul>
+  <% @base_menu.menu_items.each do |item| %>
+    <li>
+      <strong><%= item.name %></strong>
+      <p><%= number_to_currency(item.price) %></p>
+      <p><%= item.description %></p>
+      <p>Available: <%= item.availability ? "Yes" : "No" %></p>
+      <%= link_to "Edit", edit_base_menu_menu_item_path(@base_menu, item) %>
+      <%= link_to "Delete", base_menu_menu_item_path(@base_menu, item), method: :delete, data: { confirm: "Are you sure?" } %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Add New Item", new_base_menu_menu_item_path(@base_menu) %>
+<%= link_to "Back to Menus", base_menus_path %>
+
+<div>
+  <%= link_to "Edit this base menu", edit_base_menu_path(@base_menu) %> |
+  <%= link_to "Back to base menus", base_menus_path %>
+
+  <%= button_to "Destroy this base menu", @base_menu, method: :delete %>
+</div>

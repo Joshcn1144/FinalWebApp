@@ -2,6 +2,10 @@ class OwnersController < ApplicationController
   before_action :authenticate_owner!, except: [:index, :show]
   before_action :set_owner, only: %i[ show edit update destroy ]
 
+  def after_sign_in_path_for(resource)
+    base_menus_path # Redirect to BaseMenu index
+  end
+
   # GET /owners or /owners.json
   def index
     @owners = Owner.all
@@ -26,7 +30,7 @@ class OwnersController < ApplicationController
 
     respond_to do |format|
       if @owner.save
-        format.html { redirect_to @owner, notice: "Owner was successfully created." }
+        format.html { redirect_to owner_url(@owner), notice: "Owner was successfully created." }
         format.json { render :show, status: :created, location: @owner }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +43,7 @@ class OwnersController < ApplicationController
   def update
     respond_to do |format|
       if @owner.update(owner_params)
-        format.html { redirect_to @owner, notice: "Owner was successfully updated." }
+        format.html { redirect_to owner_url (@owner), notice: "Owner was successfully updated." }
         format.json { render :show, status: :ok, location: @owner }
       else
         format.html { render :edit, status: :unprocessable_entity }

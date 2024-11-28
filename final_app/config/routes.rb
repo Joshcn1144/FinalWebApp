@@ -6,7 +6,9 @@ Rails.application.routes.draw do
    }
    
   resources :owners
-  resources :menus
+  resources :base_menus do
+    resources :menu_items, only: [:create, :edit, :update, :destroy, :show] #This will allow owners to manage both menu and menu items from the same page
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -14,5 +16,5 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  root "owners#index"
+  root "base_menus#index"
 end
