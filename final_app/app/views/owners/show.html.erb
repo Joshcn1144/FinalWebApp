@@ -4,6 +4,7 @@
 
 <div>
   <%= link_to "Edit this owner", edit_owner_path(@owner) %> |
+  <%= link_to "Add BaseMenu", owner_base_menus_path(@owner) %> |
   <%= link_to "Back to owners", owners_path %>
 
   <%= button_to "Destroy this owner", @owner, method: :delete %>

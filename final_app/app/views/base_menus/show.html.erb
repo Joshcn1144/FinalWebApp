@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @base_menu %>
+
+<div>
+  <%= link_to "Edit this base menu", edit_owner_base_menu_path(@owner, @base_menu) %> |
+  <%= link_to "Back to base menus", owner_base_menus_path(@owner) %>
+
+  <%= button_to "Destroy this base menu", [@owner, base_menu] , method: :delete %>
+</div>

@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Base menus</h1>
+
+<div id="base_menus">
+  <% @base_menus.each do |base_menu| %>
+    <%= render base_menu %>
+    <p>
+      <%= link_to "Show Owner", [@owner] %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New base menu", new_owner_base_menu_path(@owner) %>
