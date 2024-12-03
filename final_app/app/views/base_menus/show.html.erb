@@ -20,9 +20,17 @@
     <% end %>
   </div>
 
+  <h2>MenuItems</h2>
+  <% for menu_item in @base_menu.menu_items %>
+    <ul>
+      <li><%= menu_item.item %></li>
+  </ul>
+  <% end %>
+
   <!-- Action Buttons -->
   <div class="text-center mt-4">
     <%= link_to "Edit Menu", edit_owner_base_menu_path(@owner, @base_menu), class: "btn btn-secondary me-2" %>
+    <%= link_to 'Add MenuItem', base_menu_menu_items_path(@base_menu) %> |
     <%= link_to "Back to Menus", owner_base_menus_path(@owner), class: "btn btn-outline-secondary" %>
     <%= button_to "Delete Menu", [@owner, @base_menu], method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure?" } %>
   </div>
