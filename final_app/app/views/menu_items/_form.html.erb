@@ -1,37 +1,27 @@
-<%= form_with(model: [@base_menu, menu_item]) do |form| %>
-  <% if menu_item.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(menu_item.errors.count, "error") %> prohibited this menu_item from being saved:</h2>
-
-      <ul>
-        <% menu_item.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div>
-    <%= form.label :item, style: "display: block" %>
-    <%= form.text_field :item %>
+<%= form_with(model: [@owner, @base_menu, @menu_item], local: true, class: "needs-validation") do |form| %>
+  <div class="mb-3">
+    <%= form.label :item, "Item Name", class: "form-label text-burgundy" %>
+    <%= form.text_field :item, class: "form-control", required: true %>
   </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+  <div class="mb-3">
+    <%= form.label :description, "Description", class: "form-label text-burgundy" %>
+    <%= form.text_area :description, class: "form-control", rows: 4 %>
   </div>
 
-  <div>
-    <%= form.label :price, style: "display: block" %>
-    <%= form.text_field :price %>
+  <div class="mb-3">
+    <%= form.label :price, "Price ($)", class: "form-label text-burgundy" %>
+    <%= form.number_field :price, step: 0.01, class: "form-control", required: true %>
   </div>
 
-  <div>
-    <%= form.label :available, style: "display: block" %>
-    <%= form.check_box :available %>
+  <div class="mb-3">
+    <%= form.label :available, "Availability", class: "form-label text-burgundy" %>
+    <%= form.check_box :available, class: "form-check-input" %>
+    <%= form.label :available, "Available?", class: "form-check-label" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="text-center">
+    <%= form.submit class: "btn btn-primary" %>
+    <%= link_to "Cancel", owner_base_menu_menu_items_path(@owner, @base_menu), class: "btn btn-secondary ms-2" %>
   </div>
 <% end %>

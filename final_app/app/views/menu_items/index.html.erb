@@ -1,14 +1,31 @@
-<p style="color: green"><%= notice %></p>
+<h1 class="text-center text-burgundy mb-4">Menu Items</h1>
 
-<h1>Menu items</h1>
-
-<div id="menu_items">
-  <% @menu_items.each do |menu_item| %>
-    <%= render menu_item %>
-    <p>
-      <%= link_to "Show this menu item", [@base_menu] %>
-    </p>
-  <% end %>
+<div class="text-end mb-3">
+  <%= link_to "Add New Menu Item", new_owner_base_menu_menu_item_path(@owner, @base_menu), class: "btn btn-primary" %>
 </div>
 
-<%= link_to "New menu item", new_base_menu_menu_item_path(@base_menu) %>
+<% if @menu_items.any? %>
+  <div class="row g-3">
+    <% @menu_items.each do |menu_item| %>
+      <div class="col-md-6 col-lg-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title text-burgundy"><%= menu_item.item %></h5>
+            <p class="card-text"><%= menu_item.description %></p>
+            <p class="card-text"><strong>Price:</strong> $<%= menu_item.price %></p>
+            <p class="card-text">
+              <strong>Availability:</strong>
+              <%= menu_item.available ? "Available" : "Not Available" %>
+            </p>
+            <div class="d-flex justify-content-between">
+              <%= link_to "Edit", edit_owner_base_menu_menu_item_path(@owner, @base_menu, menu_item), class: "btn btn-sm btn-warning" %>
+              <%= button_to "Delete", owner_base_menu_menu_item_path(@owner, @base_menu, menu_item), method: :delete, class: "btn btn-sm btn-danger", data: { confirm: "Are you sure?" } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p class="text-muted">No menu items have been added yet.</p>
+<% end %>

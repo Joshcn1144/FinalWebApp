@@ -6,8 +6,9 @@ Rails.application.routes.draw do
    }
    
   resources :owners do
-    resources :base_menus
+    resources :base_menus do
       resources :menu_items
+    end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

@@ -1,10 +1,19 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @menu_item %>
-
-<div>
-  <%= link_to "Edit this menu item", edit_base_menu_menu_item_path(@base_menu, @menu_item) %> |
-  <%= link_to "Back to menu items", base_menu_menu_items_path(@base_menu) %>
-
-  <%= button_to "Destroy this menu item", @menu_item, method: :delete %>
+<div class="container my-4">
+  <div class="card shadow-lg">
+    <div class="card-body">
+      <h2 class="card-title text-center text-burgundy"><%= @menu_item.item %></h2>
+      <hr class="menu-divider">
+      <p class="card-text"><%= @menu_item.description %></p>
+      <p class="card-text"><strong>Price:</strong> $<%= @menu_item.price %></p>
+      <p class="card-text">
+        <strong>Availability:</strong>
+        <%= @menu_item.available ? "Available" : "Not Available" %>
+      </p>
+      <div class="text-center mt-4">
+        <%= link_to "Edit", edit_owner_base_menu_menu_item_path(@owner, @base_menu, @menu_item), class: "btn btn-warning me-2" %>
+        <%= button_to "Delete", owner_base_menu_menu_item_path(@owner, @base_menu, @menu_item), method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure?" } %>
+        <%= link_to "Back to Menu Items", owner_base_menu_menu_items_path(@owner, @base_menu), class: "btn btn-secondary ms-2" %>
+      </div>
+    </div>
+  </div>
 </div>

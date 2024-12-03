@@ -1,4 +1,5 @@
 class MenuItemsController < ApplicationController
+  before_action :get_owner
   before_action :get_base_menu
   before_action :set_menu_item, only: %i[ show edit update destroy ]
 
@@ -26,7 +27,7 @@ class MenuItemsController < ApplicationController
 
     respond_to do |format|
       if @menu_item.save
-        format.html { redirect_to base_menu_menu_items_path(@base_menu), notice: "Menu item was successfully created." }
+        format.html { redirect_to owner_base_menu_menu_items_path(@owner, @base_menu), notice: "Menu item was successfully created." }
         format.json { render :show, status: :created, location: @menu_item }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -53,12 +54,16 @@ class MenuItemsController < ApplicationController
     @menu_item.destroy!
 
     respond_to do |format|
-      format.html { redirect_to base_menu_menu_items_path(@base_menu), status: :see_other, notice: "Menu item was successfully destroyed." }
+      format.html { redirect_to owner_base_menu_menu_items_path(@owner, @base_menu), status: :see_other, notice: "Menu item was successfully destroyed." }
       format.json { head :no_content }
     end
   end
 
   private
+    def get_owner
+      @owner = Owner.find(params[:owner_id])
+    end
+    
     def get_base_menu
       @base_menu = BaseMenu.find(params[:base_menu_id])
     end

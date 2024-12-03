@@ -1,37 +1,36 @@
-<div class="container mt-5">
-  <div class="text-center mb-4">
-    <h1><%= @base_menu.title %></h1>
-    <p class="lead"><%= @base_menu.description %></p>
-    <div class="menu-divider"></div>
-  </div>
+<h1 class="text-center text-burgundy"><%= @base_menu.title %></h1>
+<p class="text-center"><%= @base_menu.description %></p>
+<hr class="menu-divider">
 
-  <!-- Example Section for Menu Items -->
+<h2 class="text-burgundy">Menu Items</h2>
+<%= link_to "Add New Menu Item", new_owner_base_menu_menu_item_path(@owner, @base_menu), class: "btn btn-primary mb-3" %>
+
+<% if @base_menu.menu_items.any? %>
   <div class="row">
-    <% @base_menu.menu_items.each do |item| %>
-      <div class="col-md-6 mb-4">
-        <div class="card shadow-sm">
+    <% @base_menu.menu_items.each do |menu_item| %>
+      <div class="col-md-4">
+        <div class="card shadow-sm mb-4">
           <div class="card-body">
-            <h3 class="card-title"><%= item.name %></h3>
-            <p class="card-text"><%= item.description %></p>
-            <p class="text-muted"><strong>Price:</strong> $<%= item.price %></p>
+            <h5 class="card-title text-burgundy"><%= menu_item.item %></h5>
+            <p class="card-text"><%= menu_item.description %></p>
+            <p class="card-text"><strong>Price:</strong> <%= number_to_currency(menu_item.price) %></p>
+            <p class="card-text"><strong>Availability:</strong> <%= menu_item.available ? 'Available' : 'Not Available' %></p>
+            <hr>
+            <div class="d-flex justify-content-between">
+              <%= link_to "Edit", edit_owner_base_menu_menu_item_path(@owner, @base_menu, menu_item), class: "btn btn-sm btn-outline-secondary" %>
+              <%= button_to "Delete", owner_base_menu_menu_item_path(@owner, @base_menu, menu_item), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-sm btn-outline-danger" %>
+            </div>
           </div>
         </div>
       </div>
     <% end %>
   </div>
+<% else %>
+  <p class="text-muted">No menu items found for this base menu.</p>
+<% end %>
 
-  <h2>MenuItems</h2>
-  <% for menu_item in @base_menu.menu_items %>
-    <ul>
-      <li><%= menu_item.item %></li>
-  </ul>
-  <% end %>
-
-  <!-- Action Buttons -->
-  <div class="text-center mt-4">
-    <%= link_to "Edit Menu", edit_owner_base_menu_path(@owner, @base_menu), class: "btn btn-secondary me-2" %>
-    <%= link_to 'Add MenuItem', base_menu_menu_items_path(@base_menu) %> |
-    <%= link_to "Back to Menus", owner_base_menus_path(@owner), class: "btn btn-outline-secondary" %>
-    <%= button_to "Delete Menu", [@owner, @base_menu], method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure?" } %>
-  </div>
+<div class="mt-4">
+  <%= link_to "Edit Base Menu", edit_owner_base_menu_path(@owner, @base_menu), class: "btn btn-secondary" %>
+  <%= link_to "Back to Base Menus", owner_base_menus_path(@owner), class: "btn btn-primary" %>
+  <%= button_to "Delete Base Menu", owner_base_menu_path(@owner, @base_menu), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
 </div>
