@@ -1,14 +1,29 @@
-<p style="color: green"><%= notice %></p>
+<p class="alert alert-success" role="alert"><%= notice %></p>
 
-<h1>Owners</h1>
+<div class="container mt-4">
+  <h1 class="text-center">Owners</h1>
 
-<div id="owners">
-  <% @owners.each do |owner| %>
-    <%= render owner %>
-    <p>
-      <%= link_to "Show this owner", owner %>
-    </p>
-  <% end %>
+  <div id="owners" class="row row-cols-1 row-cols-md-2 g-4">
+    <% if @owners.any? %>
+      <% @owners.each do |owner| %>
+        <div class="col">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title"><%= owner.name %></h5>
+              <p class="card-text"><strong>Company:</strong> <%= owner.company_name %></p>
+            </div>
+            <div class="card-footer text-end">
+              <%= link_to "Show Details", owner, class: "btn btn-primary btn-sm", aria_label: "View details of #{owner.name}" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <p class="text-center mt-4">No owners available. <%= link_to "Create one now!", new_owner_path, class: "btn btn-success btn-sm" %></p>
+    <% end %>
+  </div>
+
+  <div class="mt-4 text-center">
+    <%= link_to "New Owner", new_owner_path, class: "btn btn-success btn-lg" %>
+  </div>
 </div>
-
-<%= link_to "New owner", new_owner_path %>

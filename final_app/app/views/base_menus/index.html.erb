@@ -1,14 +1,31 @@
-<p style="color: green"><%= notice %></p>
+<p class="alert alert-success" role="alert"><%= notice %></p>
 
-<h1>Base menus</h1>
+<div class="container mt-4">
+  <h1 class="text-center">Base Menus</h1>
 
-<div id="base_menus">
-  <% @base_menus.each do |base_menu| %>
-    <%= render base_menu %>
-    <p>
-      <%= link_to "Show Owner", [@owner] %>
-    </p>
-  <% end %>
+  <div id="base_menus" class="row row-cols-1 row-cols-md-2 g-4">
+    <% if @base_menus.any? %>
+      <% @base_menus.each do |base_menu| %>
+        <div class="col">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title"><%= base_menu.title %></h5>
+              <p class="card-text"><%= base_menu.description %></p>
+            </div>
+            <div class="card-footer text-end">
+              <%= link_to "View Details", [@owner, base_menu], class: "btn btn-primary btn-sm", aria_label: "View details of #{base_menu.title}" %>
+              <%= link_to "Edit", edit_owner_base_menu_path(@owner, base_menu), class: "btn btn-secondary btn-sm", aria_label: "Edit #{base_menu.title}" %>
+              <%= link_to "Delete", [@owner, base_menu], method: :delete, data: { confirm: "Are you sure you want to delete this base menu?" }, class: "btn btn-danger btn-sm", aria_label: "Delete #{base_menu.title}" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <p class="text-center mt-4">No base menus available. <%= link_to "Create one now!", new_owner_base_menu_path(@owner), class: "btn btn-success btn-sm" %></p>
+    <% end %>
+  </div>
+
+  <div class="mt-4 text-center">
+    <%= link_to "New Base Menu", new_owner_base_menu_path(@owner), class: "btn btn-success btn-lg" %>
+  </div>
 </div>
-
-<%= link_to "New base menu", new_owner_base_menu_path(@owner) %>
