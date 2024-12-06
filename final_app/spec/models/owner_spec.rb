@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Owner, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
-  Rspec.describe Owner
   # POST /students (create)
   describe "POST /owners" do
     context "with valid parameters" do
@@ -11,6 +9,7 @@ RSpec.describe Owner, type: :model do
         expect(response).to have_http_status(:found)  # Expect redirect after creation
       end
     end
+  end
     describe "validations" do
       it "is valid with valid attributes" do
         owner = build(:owner, name: "John Doe", email: "john.doe@example.com")

@@ -41,3 +41,280 @@ FOREIGN KEY ("owner_id")
   [1m[36mActiveRecord::SchemaMigration Load (9.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mActiveRecord::InternalMetadata Load (12.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
   [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (12.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (11.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (50.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "base_menus"[0m
+  [1m[35m (15.5ms)[0m  [1m[35mCREATE TABLE "base_menus" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "owner_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE INDEX "index_base_menus_on_owner_id" ON "base_menus" ("owner_id")[0m
+  [1m[35m (2.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "menu_items"[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "menu_items" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "item" varchar, "description" text, "price" decimal, "available" boolean, "base_menu_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE INDEX "index_menu_items_on_base_menu_id" ON "menu_items" ("base_menu_id")[0m
+  [1m[35m (5.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "menus"[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "menus" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "item" varchar, "description" text, "price" decimal, "available" boolean, "owner_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE INDEX "index_menus_on_owner_id" ON "menus" ("owner_id")[0m
+  [1m[35m (5.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "owners"[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "owners" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "company_name" varchar, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6))[0m
+  [1m[35m (12.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_owners_on_email" ON "owners" ("email")[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_owners_on_reset_password_token" ON "owners" ("reset_password_token")[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "abase_menus" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar DEFAULT NULL, "description" text DEFAULT NULL, "owner_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_abase_menus_on_owner_id" ON "abase_menus" ("owner_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "abase_menus" ("id","title","description","owner_id","created_at","updated_at")
+                     SELECT "id","title","description","owner_id","created_at","updated_at" FROM "base_menus"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE "base_menus"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "base_menus" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar DEFAULT NULL, "description" text DEFAULT NULL, "owner_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_67882a1e52"
+FOREIGN KEY ("owner_id")
+  REFERENCES "owners" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_base_menus_on_owner_id" ON "base_menus" ("owner_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "base_menus" ("id","title","description","owner_id","created_at","updated_at")
+                     SELECT "id","title","description","owner_id","created_at","updated_at" FROM "abase_menus"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "abase_menus"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.6ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "amenu_items" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "item" varchar DEFAULT NULL, "description" text DEFAULT NULL, "price" decimal DEFAULT NULL, "available" boolean DEFAULT NULL, "base_menu_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_amenu_items_on_base_menu_id" ON "amenu_items" ("base_menu_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "amenu_items" ("id","item","description","price","available","base_menu_id","created_at","updated_at")
+                     SELECT "id","item","description","price","available","base_menu_id","created_at","updated_at" FROM "menu_items"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE "menu_items"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "menu_items" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "item" varchar DEFAULT NULL, "description" text DEFAULT NULL, "price" decimal DEFAULT NULL, "available" boolean DEFAULT NULL, "base_menu_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_7a29824473"
+FOREIGN KEY ("base_menu_id")
+  REFERENCES "base_menus" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_menu_items_on_base_menu_id" ON "menu_items" ("base_menu_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "menu_items" ("id","item","description","price","available","base_menu_id","created_at","updated_at")
+                     SELECT "id","item","description","price","available","base_menu_id","created_at","updated_at" FROM "amenu_items"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "amenu_items"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.7ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "amenus" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "item" varchar DEFAULT NULL, "description" text DEFAULT NULL, "price" decimal DEFAULT NULL, "available" boolean DEFAULT NULL, "owner_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "tindex_amenus_on_owner_id" ON "amenus" ("owner_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "amenus" ("id","item","description","price","available","owner_id","created_at","updated_at")
+                     SELECT "id","item","description","price","available","owner_id","created_at","updated_at" FROM "menus"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "menus"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "menus" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "item" varchar DEFAULT NULL, "description" text DEFAULT NULL, "price" decimal DEFAULT NULL, "available" boolean DEFAULT NULL, "owner_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_c7fa609760"
+FOREIGN KEY ("owner_id")
+  REFERENCES "owners" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_menus_on_owner_id" ON "menus" ("owner_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "menus" ("id","item","description","price","available","owner_id","created_at","updated_at")
+                     SELECT "id","item","description","price","available","owner_id","created_at","updated_at" FROM "amenus"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "amenus"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (5.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20241203035949)[0m
+  [1m[35m (6.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20241202072922),
+(20241120001336),
+(20241119194057);[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (7.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (6.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'test', '2024-12-03 20:52:22.097923', '2024-12-03 20:52:22.097927') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (1.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (7.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '2df6f023f902d4dcd7d89f05280fea900d96276e', '2024-12-03 20:52:22.132398', '2024-12-03 20:52:22.132402') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (11.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (17.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/owners/new" for 127.0.0.1 at 2024-12-03 20:53:05 +0000
+Processing by OwnersController#new as HTML
+Completed 401 Unauthorized in 83ms (ActiveRecord: 0.0ms | Allocations: 2129)
+Started GET "/owners/sign_in" for 127.0.0.1 at 2024-12-03 20:53:08 +0000
+Processing by Owners::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owners/sessions/new.html.erb within layouts/application
+  Rendered owners/shared/_links.html.erb (Duration: 5.9ms | Allocations: 588)
+  Rendered owners/sessions/new.html.erb within layouts/application (Duration: 43.8ms | Allocations: 2809)
+  Rendered layout layouts/application.html.erb (Duration: 49.8ms | Allocations: 3784)
+Completed 200 OK in 144ms (Views: 100.9ms | ActiveRecord: 0.7ms | Allocations: 16243)
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/owners/new" for 127.0.0.1 at 2024-12-03 20:53:12 +0000
+Processing by OwnersController#new as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 165)
+Started GET "/owners/sign_in" for 127.0.0.1 at 2024-12-03 20:53:12 +0000
+Processing by Owners::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owners/sessions/new.html.erb within layouts/application
+  Rendered owners/shared/_links.html.erb (Duration: 0.2ms | Allocations: 115)
+  Rendered owners/sessions/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 809)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 1134)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.0ms | Allocations: 1731)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOwner Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "owners" WHERE "owners"."email" = ? LIMIT ?[0m  [["email", "owner@example.com"], ["LIMIT", 1]]
+  [1m[36mOwner Create (0.4ms)[0m  [1m[32mINSERT INTO "owners" ("company_name", "name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["company_name", nil], ["name", "Test Owner"], ["created_at", "2024-12-03 20:53:14.865498"], ["updated_at", "2024-12-03 20:53:14.865498"], ["email", "owner@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOwner Exists? (2.7ms)[0m  [1m[34mSELECT 1 AS one FROM "owners" WHERE "owners"."email" = ? LIMIT ?[0m  [["email", "owner@example.com"], ["LIMIT", 1]]
+  [1m[36mOwner Create (0.7ms)[0m  [1m[32mINSERT INTO "owners" ("company_name", "name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["company_name", nil], ["name", "Test Owner"], ["created_at", "2024-12-03 20:53:14.988753"], ["updated_at", "2024-12-03 20:53:14.988753"], ["email", "owner@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (15.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/owners/new" for 127.0.0.1 at 2024-12-03 20:57:41 +0000
+Processing by OwnersController#new as HTML
+Completed 401 Unauthorized in 27ms (ActiveRecord: 0.0ms | Allocations: 2129)
+Started GET "/owners/sign_in" for 127.0.0.1 at 2024-12-03 20:57:43 +0000
+Processing by Owners::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owners/sessions/new.html.erb within layouts/application
+  Rendered owners/shared/_links.html.erb (Duration: 6.8ms | Allocations: 588)
+  Rendered owners/sessions/new.html.erb within layouts/application (Duration: 51.4ms | Allocations: 2809)
+  Rendered layout layouts/application.html.erb (Duration: 58.5ms | Allocations: 3784)
+Completed 200 OK in 277ms (Views: 135.1ms | ActiveRecord: 1.7ms | Allocations: 16249)
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/owners/new" for 127.0.0.1 at 2024-12-03 20:57:46 +0000
+Processing by OwnersController#new as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 165)
+Started GET "/owners/sign_in" for 127.0.0.1 at 2024-12-03 20:57:46 +0000
+Processing by Owners::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owners/sessions/new.html.erb within layouts/application
+  Rendered owners/shared/_links.html.erb (Duration: 0.3ms | Allocations: 115)
+  Rendered owners/sessions/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 809)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 1134)
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.0ms | Allocations: 1728)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOwner Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "owners" WHERE "owners"."email" = ? LIMIT ?[0m  [["email", "owner@example.com"], ["LIMIT", 1]]
+  [1m[36mOwner Create (0.4ms)[0m  [1m[32mINSERT INTO "owners" ("company_name", "name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["company_name", nil], ["name", "Test Owner"], ["created_at", "2024-12-03 20:57:49.439129"], ["updated_at", "2024-12-03 20:57:49.439129"], ["email", "owner@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOwner Exists? (2.6ms)[0m  [1m[34mSELECT 1 AS one FROM "owners" WHERE "owners"."email" = ? LIMIT ?[0m  [["email", "owner@example.com"], ["LIMIT", 1]]
+  [1m[36mOwner Create (0.7ms)[0m  [1m[32mINSERT INTO "owners" ("company_name", "name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["company_name", nil], ["name", "Test Owner"], ["created_at", "2024-12-03 20:57:49.582701"], ["updated_at", "2024-12-03 20:57:49.582701"], ["email", "owner@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (12.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/owners/new" for 127.0.0.1 at 2024-12-03 21:00:12 +0000
+Processing by OwnersController#new as HTML
+Completed 401 Unauthorized in 43ms (ActiveRecord: 0.0ms | Allocations: 2129)
+Started GET "/owners/sign_in" for 127.0.0.1 at 2024-12-03 21:00:14 +0000
+Processing by Owners::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owners/sessions/new.html.erb within layouts/application
+  Rendered owners/shared/_links.html.erb (Duration: 7.8ms | Allocations: 588)
+  Rendered owners/sessions/new.html.erb within layouts/application (Duration: 193.2ms | Allocations: 2809)
+  Rendered layout layouts/application.html.erb (Duration: 203.3ms | Allocations: 3784)
+Completed 200 OK in 488ms (Views: 438.6ms | ActiveRecord: 1.0ms | Allocations: 16264)
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/owners/new" for 127.0.0.1 at 2024-12-03 21:00:18 +0000
+Processing by OwnersController#new as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 165)
+Started GET "/owners/sign_in" for 127.0.0.1 at 2024-12-03 21:00:18 +0000
+Processing by Owners::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owners/sessions/new.html.erb within layouts/application
+  Rendered owners/shared/_links.html.erb (Duration: 0.2ms | Allocations: 115)
+  Rendered owners/sessions/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 809)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 1134)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.0ms | Allocations: 1739)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOwner Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "owners" WHERE "owners"."email" = ? LIMIT ?[0m  [["email", "owner@example.com"], ["LIMIT", 1]]
+  [1m[36mOwner Create (0.5ms)[0m  [1m[32mINSERT INTO "owners" ("company_name", "name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["company_name", nil], ["name", "Test Owner"], ["created_at", "2024-12-03 21:00:21.263917"], ["updated_at", "2024-12-03 21:00:21.263917"], ["email", "owner@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOwner Exists? (2.2ms)[0m  [1m[34mSELECT 1 AS one FROM "owners" WHERE "owners"."email" = ? LIMIT ?[0m  [["email", "owner@example.com"], ["LIMIT", 1]]
+  [1m[36mOwner Create (1.0ms)[0m  [1m[32mINSERT INTO "owners" ("company_name", "name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["company_name", nil], ["name", "Test Owner"], ["created_at", "2024-12-03 21:00:21.383467"], ["updated_at", "2024-12-03 21:00:21.383467"], ["email", "owner@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (7.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/owners/new" for 127.0.0.1 at 2024-12-03 21:04:00 +0000
+Processing by OwnersController#new as HTML
+Completed 401 Unauthorized in 30ms (ActiveRecord: 0.0ms | Allocations: 2129)
+Started GET "/owners/sign_in" for 127.0.0.1 at 2024-12-03 21:04:02 +0000
+Processing by Owners::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owners/sessions/new.html.erb within layouts/application
+  Rendered owners/shared/_links.html.erb (Duration: 17.9ms | Allocations: 588)
+  Rendered owners/sessions/new.html.erb within layouts/application (Duration: 180.1ms | Allocations: 2809)
+  Rendered layout layouts/application.html.erb (Duration: 189.3ms | Allocations: 3784)
+Completed 200 OK in 352ms (Views: 308.7ms | ActiveRecord: 0.9ms | Allocations: 16246)
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/owners/new" for 127.0.0.1 at 2024-12-03 21:04:06 +0000
+Processing by OwnersController#new as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 165)
+Started GET "/owners/sign_in" for 127.0.0.1 at 2024-12-03 21:04:06 +0000
+Processing by Owners::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owners/sessions/new.html.erb within layouts/application
+  Rendered owners/shared/_links.html.erb (Duration: 0.2ms | Allocations: 115)
+  Rendered owners/sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 809)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 1134)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 1725)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOwner Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "owners" WHERE "owners"."email" = ? LIMIT ?[0m  [["email", "owner@example.com"], ["LIMIT", 1]]
+  [1m[36mOwner Create (0.7ms)[0m  [1m[32mINSERT INTO "owners" ("company_name", "name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["company_name", nil], ["name", "Test Owner"], ["created_at", "2024-12-03 21:04:09.281846"], ["updated_at", "2024-12-03 21:04:09.281846"], ["email", "owner@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOwner Exists? (3.1ms)[0m  [1m[34mSELECT 1 AS one FROM "owners" WHERE "owners"."email" = ? LIMIT ?[0m  [["email", "owner@example.com"], ["LIMIT", 1]]
+  [1m[36mOwner Create (0.8ms)[0m  [1m[32mINSERT INTO "owners" ("company_name", "name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["company_name", nil], ["name", "Test Owner"], ["created_at", "2024-12-03 21:04:09.434061"], ["updated_at", "2024-12-03 21:04:09.434061"], ["email", "owner@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (14.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (14.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m

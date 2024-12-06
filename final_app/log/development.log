@@ -7252,3 +7252,585 @@ Processing by BaseMenusController#show as HTML
 Completed 200 OK in 115ms (Views: 74.3ms | ActiveRecord: 10.5ms | Allocations: 3844)
 
 
+Started GET "/" for 172.17.0.1 at 2024-12-03 18:59:46 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (14.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OwnersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owners/index.html.erb within layouts/application
+  [1m[36mOwner Exists? (10.4ms)[0m  [1m[34mSELECT 1 AS one FROM "owners" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/owners/index.html.erb:7
+  [1m[36mOwner Load (1.8ms)[0m  [1m[34mSELECT "owners".* FROM "owners"[0m
+  ↳ app/views/owners/index.html.erb:8
+  Rendered owners/index.html.erb within layouts/application (Duration: 230.1ms | Allocations: 10826)
+  Rendered layout layouts/application.html.erb (Duration: 258.8ms | Allocations: 12148)
+Completed 200 OK in 10744ms (Views: 398.1ms | ActiveRecord: 196.8ms | Allocations: 298846)
+
+
+Started GET "/owners/13" for 172.17.0.1 at 2024-12-03 19:03:31 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by OwnersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mOwner Load (2.1ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/owners_controller.rb:64:in `set_owner'
+  Rendering layout layouts/application.html.erb
+  Rendering owners/show.html.erb within layouts/application
+  Rendered owners/show.html.erb within layouts/application (Duration: 189.4ms | Allocations: 1714)
+  Rendered layout layouts/application.html.erb (Duration: 195.7ms | Allocations: 2164)
+Completed 200 OK in 406ms (Views: 198.9ms | ActiveRecord: 2.1ms | Allocations: 6007)
+
+
+Started GET "/owners/13/edit" for 172.17.0.1 at 2024-12-03 19:03:35 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by OwnersController#edit as HTML
+  Parameters: {"id"=>"13"}
+Completed 401 Unauthorized in 113ms (ActiveRecord: 0.0ms | Allocations: 1177)
+
+
+Started GET "/owners/sign_in" for 172.17.0.1 at 2024-12-03 19:03:35 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Owners::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owners/sessions/new.html.erb within layouts/application
+  Rendered owners/shared/_links.html.erb (Duration: 32.0ms | Allocations: 575)
+  Rendered owners/sessions/new.html.erb within layouts/application (Duration: 478.7ms | Allocations: 2715)
+  Rendered layout layouts/application.html.erb (Duration: 485.8ms | Allocations: 3220)
+Completed 200 OK in 640ms (Views: 598.4ms | ActiveRecord: 0.0ms | Allocations: 4861)
+
+
+Started GET "/owners/sign_up" for 172.17.0.1 at 2024-12-03 19:03:39 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Owners::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owners/registrations/new.html.erb within layouts/application
+  Rendered owners/shared/_error_messages.html.erb (Duration: 21.0ms | Allocations: 221)
+  Rendered owners/shared/_links.html.erb (Duration: 0.4ms | Allocations: 82)
+  Rendered owners/registrations/new.html.erb within layouts/application (Duration: 142.0ms | Allocations: 1592)
+  Rendered layout layouts/application.html.erb (Duration: 148.8ms | Allocations: 2026)
+Completed 200 OK in 322ms (Views: 303.3ms | ActiveRecord: 0.0ms | Allocations: 3100)
+
+
+Started POST "/owners" for 172.17.0.1 at 2024-12-03 19:03:49 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Owners::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "owner"=>{"email"=>"legorules94@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOwner Exists? (8.9ms)[0m  [1m[34mSELECT 1 AS one FROM "owners" WHERE "owners"."email" = ? LIMIT ?[0m  [["email", "legorules94@gmail.com"], ["LIMIT", 1]]
+  [1m[36mOwner Create (1.2ms)[0m  [1m[32mINSERT INTO "owners" ("company_name", "name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["company_name", nil], ["name", nil], ["created_at", "2024-12-03 19:03:51.376765"], ["updated_at", "2024-12-03 19:03:51.376765"], ["email", "legorules94@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (22.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/owners/16
+Completed 303 See Other in 663ms (ActiveRecord: 33.9ms | Allocations: 8845)
+
+
+Started GET "/owners/16" for 172.17.0.1 at 2024-12-03 19:03:51 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by OwnersController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mOwner Load (9.0ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/owners_controller.rb:64:in `set_owner'
+  Rendering layout layouts/application.html.erb
+  Rendering owners/show.html.erb within layouts/application
+  Rendered owners/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 439)
+  [1m[36mOwner Load (1.5ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? ORDER BY "owners"."id" ASC LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:65
+  Rendered layout layouts/application.html.erb (Duration: 23.8ms | Allocations: 1655)
+Completed 200 OK in 53ms (Views: 26.9ms | ActiveRecord: 10.5ms | Allocations: 2240)
+
+
+Started GET "/owners/16/edit" for 172.17.0.1 at 2024-12-03 19:03:54 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by OwnersController#edit as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mOwner Load (1.2ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? ORDER BY "owners"."id" ASC LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mOwner Load (1.3ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/owners_controller.rb:64:in `set_owner'
+  Rendering layout layouts/application.html.erb
+  Rendering owners/edit.html.erb within layouts/application
+  Rendered owners/_form.html.erb (Duration: 20.3ms | Allocations: 1113)
+  Rendered owners/edit.html.erb within layouts/application (Duration: 136.2ms | Allocations: 1442)
+  Rendered layout layouts/application.html.erb (Duration: 142.0ms | Allocations: 1847)
+Completed 200 OK in 245ms (Views: 145.7ms | ActiveRecord: 2.4ms | Allocations: 3773)
+
+
+Started GET "/owners" for 172.17.0.1 at 2024-12-03 19:03:57 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by OwnersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owners/index.html.erb within layouts/application
+  [1m[36mOwner Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "owners" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/owners/index.html.erb:7
+  [1m[36mOwner Load (2.1ms)[0m  [1m[34mSELECT "owners".* FROM "owners"[0m
+  ↳ app/views/owners/index.html.erb:8
+  Rendered owners/index.html.erb within layouts/application (Duration: 16.8ms | Allocations: 1116)
+  [1m[36mOwner Load (1.1ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? ORDER BY "owners"."id" ASC LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:65
+  Rendered layout layouts/application.html.erb (Duration: 37.1ms | Allocations: 2101)
+Completed 200 OK in 51ms (Views: 36.6ms | ActiveRecord: 4.8ms | Allocations: 2359)
+
+
+Started GET "/owners/13" for 172.17.0.1 at 2024-12-03 19:03:59 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by OwnersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mOwner Load (1.1ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/owners_controller.rb:64:in `set_owner'
+  Rendering layout layouts/application.html.erb
+  Rendering owners/show.html.erb within layouts/application
+  Rendered owners/show.html.erb within layouts/application (Duration: 2.2ms | Allocations: 441)
+  [1m[36mOwner Load (1.3ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? ORDER BY "owners"."id" ASC LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:65
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 1421)
+Completed 200 OK in 34ms (Views: 19.6ms | ActiveRecord: 2.4ms | Allocations: 2006)
+
+
+Started GET "/owners/13/edit" for 172.17.0.1 at 2024-12-03 19:04:01 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by OwnersController#edit as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mOwner Load (1.2ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? ORDER BY "owners"."id" ASC LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mOwner Load (1.5ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/owners_controller.rb:64:in `set_owner'
+  Rendering layout layouts/application.html.erb
+  Rendering owners/edit.html.erb within layouts/application
+  Rendered owners/_form.html.erb (Duration: 1.5ms | Allocations: 582)
+  Rendered owners/edit.html.erb within layouts/application (Duration: 5.0ms | Allocations: 686)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 1091)
+Completed 200 OK in 45ms (Views: 16.7ms | ActiveRecord: 2.7ms | Allocations: 3000)
+
+
+Started GET "/owners" for 172.17.0.1 at 2024-12-03 19:04:06 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by OwnersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owners/index.html.erb within layouts/application
+  [1m[36mOwner Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "owners" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/owners/index.html.erb:7
+  [1m[36mOwner Load (1.4ms)[0m  [1m[34mSELECT "owners".* FROM "owners"[0m
+  ↳ app/views/owners/index.html.erb:8
+  Rendered owners/index.html.erb within layouts/application (Duration: 13.0ms | Allocations: 1107)
+  [1m[36mOwner Load (1.5ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? ORDER BY "owners"."id" ASC LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:65
+  Rendered layout layouts/application.html.erb (Duration: 24.6ms | Allocations: 2092)
+Completed 200 OK in 40ms (Views: 25.9ms | ActiveRecord: 3.6ms | Allocations: 2340)
+
+
+Started GET "/owners/13" for 172.17.0.1 at 2024-12-03 19:04:09 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by OwnersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mOwner Load (1.2ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/owners_controller.rb:64:in `set_owner'
+  Rendering layout layouts/application.html.erb
+  Rendering owners/show.html.erb within layouts/application
+  Rendered owners/show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 443)
+  [1m[36mOwner Load (2.2ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? ORDER BY "owners"."id" ASC LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:65
+  Rendered layout layouts/application.html.erb (Duration: 22.6ms | Allocations: 1423)
+Completed 200 OK in 44ms (Views: 25.8ms | ActiveRecord: 3.3ms | Allocations: 2007)
+
+
+Started GET "/owners/13/base_menus" for 172.17.0.1 at 2024-12-03 19:04:14 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BaseMenusController#index as HTML
+  Parameters: {"owner_id"=>"13"}
+  [1m[36mOwner Load (1.4ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/base_menus_controller.rb:65:in `get_owner'
+  Rendering layout layouts/application.html.erb
+  Rendering base_menus/index.html.erb within layouts/application
+  [1m[36mBaseMenu Load (1.5ms)[0m  [1m[34mSELECT "base_menus".* FROM "base_menus" WHERE "base_menus"."owner_id" = ?[0m  [["owner_id", 13]]
+  ↳ app/views/base_menus/index.html.erb:7
+  Rendered base_menus/index.html.erb within layouts/application (Duration: 248.1ms | Allocations: 7448)
+  [1m[36mOwner Load (1.4ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? ORDER BY "owners"."id" ASC LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:65
+  Rendered layout layouts/application.html.erb (Duration: 263.8ms | Allocations: 8435)
+Completed 200 OK in 698ms (Views: 275.3ms | ActiveRecord: 10.0ms | Allocations: 12252)
+
+
+Started GET "/owners/13/base_menus/new" for 172.17.0.1 at 2024-12-03 19:04:20 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BaseMenusController#new as HTML
+  Parameters: {"owner_id"=>"13"}
+  [1m[36mOwner Load (1.1ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/base_menus_controller.rb:65:in `get_owner'
+  Rendering layout layouts/application.html.erb
+  Rendering base_menus/new.html.erb within layouts/application
+  Rendered base_menus/_form.html.erb (Duration: 45.1ms | Allocations: 1328)
+  Rendered base_menus/new.html.erb within layouts/application (Duration: 196.3ms | Allocations: 1612)
+  [1m[36mOwner Load (1.1ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? ORDER BY "owners"."id" ASC LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:65
+  Rendered layout layouts/application.html.erb (Duration: 207.0ms | Allocations: 2592)
+Completed 200 OK in 309ms (Views: 210.4ms | ActiveRecord: 2.1ms | Allocations: 3484)
+
+
+Started GET "/owners/13/base_menus" for 172.17.0.1 at 2024-12-03 19:04:24 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BaseMenusController#index as HTML
+  Parameters: {"owner_id"=>"13"}
+  [1m[36mOwner Load (1.8ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/base_menus_controller.rb:65:in `get_owner'
+  Rendering layout layouts/application.html.erb
+  Rendering base_menus/index.html.erb within layouts/application
+  [1m[36mBaseMenu Load (0.9ms)[0m  [1m[34mSELECT "base_menus".* FROM "base_menus" WHERE "base_menus"."owner_id" = ?[0m  [["owner_id", 13]]
+  ↳ app/views/base_menus/index.html.erb:7
+  Rendered base_menus/index.html.erb within layouts/application (Duration: 8.9ms | Allocations: 898)
+  [1m[36mOwner Load (1.6ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? ORDER BY "owners"."id" ASC LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:65
+  Rendered layout layouts/application.html.erb (Duration: 21.9ms | Allocations: 1878)
+Completed 200 OK in 45ms (Views: 25.8ms | ActiveRecord: 4.3ms | Allocations: 2490)
+
+
+Started GET "/owners/13/base_menus/7" for 172.17.0.1 at 2024-12-03 19:04:27 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BaseMenusController#show as HTML
+  Parameters: {"owner_id"=>"13", "id"=>"7"}
+  [1m[36mOwner Load (0.8ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/base_menus_controller.rb:65:in `get_owner'
+  [1m[36mBaseMenu Load (9.0ms)[0m  [1m[34mSELECT "base_menus".* FROM "base_menus" WHERE "base_menus"."owner_id" = ? AND "base_menus"."id" = ? LIMIT ?[0m  [["owner_id", 13], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/base_menus_controller.rb:69:in `set_base_menu'
+  Rendering layout layouts/application.html.erb
+  Rendering base_menus/show.html.erb within layouts/application
+  [1m[36mMenuItem Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "menu_items" WHERE "menu_items"."base_menu_id" = ? LIMIT ?[0m  [["base_menu_id", 7], ["LIMIT", 1]]
+  ↳ app/views/base_menus/show.html.erb:8
+  [1m[36mMenuItem Load (1.3ms)[0m  [1m[34mSELECT "menu_items".* FROM "menu_items" WHERE "menu_items"."base_menu_id" = ?[0m  [["base_menu_id", 7]]
+  ↳ app/views/base_menus/show.html.erb:10
+  Rendered base_menus/show.html.erb within layouts/application (Duration: 285.1ms | Allocations: 11509)
+  [1m[36mOwner Load (1.5ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? ORDER BY "owners"."id" ASC LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:65
+  Rendered layout layouts/application.html.erb (Duration: 301.2ms | Allocations: 12491)
+Completed 200 OK in 532ms (Views: 296.0ms | ActiveRecord: 18.1ms | Allocations: 13887)
+
+
+Started GET "/owners/13/base_menus/7/menu_items/new" for 172.17.0.1 at 2024-12-03 19:04:45 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by MenuItemsController#new as HTML
+  Parameters: {"owner_id"=>"13", "base_menu_id"=>"7"}
+  [1m[36mOwner Load (1.4ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/menu_items_controller.rb:64:in `get_owner'
+  [1m[36mBaseMenu Load (0.9ms)[0m  [1m[34mSELECT "base_menus".* FROM "base_menus" WHERE "base_menus"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/menu_items_controller.rb:68:in `get_base_menu'
+  Rendering layout layouts/application.html.erb
+  Rendering menu_items/new.html.erb within layouts/application
+  Rendered menu_items/_form.html.erb (Duration: 38.0ms | Allocations: 1427)
+  Rendered menu_items/new.html.erb within layouts/application (Duration: 261.8ms | Allocations: 1715)
+  [1m[36mOwner Load (1.2ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? ORDER BY "owners"."id" ASC LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:65
+  Rendered layout layouts/application.html.erb (Duration: 275.4ms | Allocations: 2700)
+Completed 200 OK in 377ms (Views: 286.5ms | ActiveRecord: 3.4ms | Allocations: 4743)
+
+
+Started GET "/owners/13/base_menus/7/menu_items" for 172.17.0.1 at 2024-12-03 19:04:55 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by MenuItemsController#index as HTML
+  Parameters: {"owner_id"=>"13", "base_menu_id"=>"7"}
+  [1m[36mOwner Load (1.7ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/menu_items_controller.rb:64:in `get_owner'
+  [1m[36mBaseMenu Load (1.2ms)[0m  [1m[34mSELECT "base_menus".* FROM "base_menus" WHERE "base_menus"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/menu_items_controller.rb:68:in `get_base_menu'
+  Rendering layout layouts/application.html.erb
+  Rendering menu_items/index.html.erb within layouts/application
+  [1m[36mMenuItem Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "menu_items" WHERE "menu_items"."base_menu_id" = ? LIMIT ?[0m  [["base_menu_id", 7], ["LIMIT", 1]]
+  ↳ app/views/menu_items/index.html.erb:7
+  [1m[36mMenuItem Load (1.2ms)[0m  [1m[34mSELECT "menu_items".* FROM "menu_items" WHERE "menu_items"."base_menu_id" = ?[0m  [["base_menu_id", 7]]
+  ↳ app/views/menu_items/index.html.erb:9
+  Rendered menu_items/index.html.erb within layouts/application (Duration: 38.1ms | Allocations: 2075)
+  [1m[36mOwner Load (1.3ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? ORDER BY "owners"."id" ASC LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:65
+  Rendered layout layouts/application.html.erb (Duration: 50.8ms | Allocations: 3055)
+Completed 200 OK in 183ms (Views: 51.5ms | ActiveRecord: 6.4ms | Allocations: 4096)
+
+
+Started GET "/owners/13/base_menus/7/menu_items/2/edit" for 172.17.0.1 at 2024-12-03 19:05:01 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by MenuItemsController#edit as HTML
+  Parameters: {"owner_id"=>"13", "base_menu_id"=>"7", "id"=>"2"}
+  [1m[36mOwner Load (1.0ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/menu_items_controller.rb:64:in `get_owner'
+  [1m[36mBaseMenu Load (1.3ms)[0m  [1m[34mSELECT "base_menus".* FROM "base_menus" WHERE "base_menus"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/menu_items_controller.rb:68:in `get_base_menu'
+  [1m[36mMenuItem Load (1.7ms)[0m  [1m[34mSELECT "menu_items".* FROM "menu_items" WHERE "menu_items"."base_menu_id" = ? AND "menu_items"."id" = ? LIMIT ?[0m  [["base_menu_id", 7], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/menu_items_controller.rb:73:in `set_menu_item'
+  Rendering layout layouts/application.html.erb
+  Rendering menu_items/edit.html.erb within layouts/application
+  Rendered menu_items/_form.html.erb (Duration: 3.7ms | Allocations: 951)
+  Rendered menu_items/edit.html.erb within layouts/application (Duration: 22.3ms | Allocations: 2284)
+  Rendered layout layouts/application.html.erb (Duration: 25.4ms | Allocations: 2375)
+Completed 500 Internal Server Error in 145ms (ActiveRecord: 3.9ms | Allocations: 4063)
+
+
+  
+ActionView::Template::Error (undefined method `base_menu_menu_items_path' for #<ActionView::Base:0x0000000000ff28>):
+     6: 
+     7: <div>
+     8:   <%= link_to "Show this menu item", [@owner, @base_menu, @menu_item], class: "btn btn-secondary" %>
+     9:   <%= link_to "Back to menu items", base_menu_menu_items_path(@base_menu), class: "btn btn-secondary" %>
+    10: </div>
+  
+app/views/menu_items/edit.html.erb:9
+Started GET "/owners" for 172.17.0.1 at 2024-12-03 19:05:10 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by OwnersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owners/index.html.erb within layouts/application
+  [1m[36mOwner Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "owners" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/owners/index.html.erb:7
+  [1m[36mOwner Load (1.7ms)[0m  [1m[34mSELECT "owners".* FROM "owners"[0m
+  ↳ app/views/owners/index.html.erb:8
+  Rendered owners/index.html.erb within layouts/application (Duration: 20.2ms | Allocations: 1124)
+  [1m[36mOwner Load (2.5ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? ORDER BY "owners"."id" ASC LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:65
+  Rendered layout layouts/application.html.erb (Duration: 37.5ms | Allocations: 2109)
+Completed 200 OK in 53ms (Views: 36.5ms | ActiveRecord: 5.7ms | Allocations: 2356)
+
+
+Started GET "/owners/13" for 172.17.0.1 at 2024-12-03 19:05:12 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by OwnersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mOwner Load (0.6ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/owners_controller.rb:64:in `set_owner'
+  Rendering layout layouts/application.html.erb
+  Rendering owners/show.html.erb within layouts/application
+  Rendered owners/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 434)
+  [1m[36mOwner Load (1.2ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? ORDER BY "owners"."id" ASC LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:65
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 1414)
+Completed 200 OK in 34ms (Views: 18.3ms | ActiveRecord: 1.8ms | Allocations: 1997)
+
+
+Started GET "/owners/13/base_menus" for 172.17.0.1 at 2024-12-03 19:05:14 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BaseMenusController#index as HTML
+  Parameters: {"owner_id"=>"13"}
+  [1m[36mOwner Load (0.8ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/base_menus_controller.rb:65:in `get_owner'
+  Rendering layout layouts/application.html.erb
+  Rendering base_menus/index.html.erb within layouts/application
+  [1m[36mBaseMenu Load (1.8ms)[0m  [1m[34mSELECT "base_menus".* FROM "base_menus" WHERE "base_menus"."owner_id" = ?[0m  [["owner_id", 13]]
+  ↳ app/views/base_menus/index.html.erb:7
+  Rendered base_menus/index.html.erb within layouts/application (Duration: 12.0ms | Allocations: 889)
+  [1m[36mOwner Load (1.2ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? ORDER BY "owners"."id" ASC LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:65
+  Rendered layout layouts/application.html.erb (Duration: 28.1ms | Allocations: 1869)
+Completed 200 OK in 56ms (Views: 34.3ms | ActiveRecord: 3.7ms | Allocations: 2480)
+
+
+Started GET "/owners/13/base_menus/7" for 172.17.0.1 at 2024-12-03 19:05:15 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BaseMenusController#show as HTML
+  Parameters: {"owner_id"=>"13", "id"=>"7"}
+  [1m[36mOwner Load (1.1ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/base_menus_controller.rb:65:in `get_owner'
+  [1m[36mBaseMenu Load (1.8ms)[0m  [1m[34mSELECT "base_menus".* FROM "base_menus" WHERE "base_menus"."owner_id" = ? AND "base_menus"."id" = ? LIMIT ?[0m  [["owner_id", 13], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/base_menus_controller.rb:69:in `set_base_menu'
+  Rendering layout layouts/application.html.erb
+  Rendering base_menus/show.html.erb within layouts/application
+  [1m[36mMenuItem Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "menu_items" WHERE "menu_items"."base_menu_id" = ? LIMIT ?[0m  [["base_menu_id", 7], ["LIMIT", 1]]
+  ↳ app/views/base_menus/show.html.erb:8
+  [1m[36mMenuItem Load (1.2ms)[0m  [1m[34mSELECT "menu_items".* FROM "menu_items" WHERE "menu_items"."base_menu_id" = ?[0m  [["base_menu_id", 7]]
+  ↳ app/views/base_menus/show.html.erb:10
+  Rendered base_menus/show.html.erb within layouts/application (Duration: 21.9ms | Allocations: 2189)
+  [1m[36mOwner Load (1.6ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? ORDER BY "owners"."id" ASC LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:65
+  Rendered layout layouts/application.html.erb (Duration: 37.5ms | Allocations: 3169)
+Completed 200 OK in 65ms (Views: 38.1ms | ActiveRecord: 6.7ms | Allocations: 4380)
+
+
+Started GET "/owners/13/base_menus/7/menu_items/2/edit" for 172.17.0.1 at 2024-12-03 20:01:41 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by MenuItemsController#edit as HTML
+  Parameters: {"owner_id"=>"13", "base_menu_id"=>"7", "id"=>"2"}
+  [1m[36mOwner Load (121.3ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/menu_items_controller.rb:64:in `get_owner'
+  [1m[36mBaseMenu Load (3.1ms)[0m  [1m[34mSELECT "base_menus".* FROM "base_menus" WHERE "base_menus"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/menu_items_controller.rb:68:in `get_base_menu'
+  [1m[36mMenuItem Load (5.7ms)[0m  [1m[34mSELECT "menu_items".* FROM "menu_items" WHERE "menu_items"."base_menu_id" = ? AND "menu_items"."id" = ? LIMIT ?[0m  [["base_menu_id", 7], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/menu_items_controller.rb:73:in `set_menu_item'
+  Rendering layout layouts/application.html.erb
+  Rendering menu_items/edit.html.erb within layouts/application
+  Rendered menu_items/_form.html.erb (Duration: 123.9ms | Allocations: 935)
+  Rendered menu_items/edit.html.erb within layouts/application (Duration: 176.6ms | Allocations: 2079)
+  Rendered layout layouts/application.html.erb (Duration: 199.5ms | Allocations: 2170)
+Completed 500 Internal Server Error in 665ms (ActiveRecord: 209.0ms | Allocations: 4034)
+
+
+  
+ActionView::Template::Error (undefined method `base_menu_menu_items_path' for #<ActionView::Base:0x00000000010220>):
+     6: 
+     7: <div>
+     8:   <%= link_to "Show this menu item", [@owner, @base_menu, @menu_item], class: "btn btn-secondary" %>
+     9:   <%= link_to "Back to menu items", base_menu_menu_items_path(@base_menu), class: "btn btn-secondary" %>
+    10: </div>
+  
+app/views/menu_items/edit.html.erb:9
+Started GET "/owners/16" for 172.17.0.1 at 2024-12-03 20:16:14 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by OwnersController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mOwner Load (139.1ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/owners_controller.rb:64:in `set_owner'
+  Rendering layout layouts/application.html.erb
+  Rendering owners/show.html.erb within layouts/application
+  Rendered owners/show.html.erb within layouts/application (Duration: 17.3ms | Allocations: 434)
+  [1m[36mOwner Load (2.0ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? ORDER BY "owners"."id" ASC LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:65
+  Rendered layout layouts/application.html.erb (Duration: 66.3ms | Allocations: 1448)
+Completed 200 OK in 254ms (Views: 72.1ms | ActiveRecord: 242.9ms | Allocations: 2296)
+
+
+Started DELETE "/owners/16" for 172.17.0.1 at 2024-12-03 20:16:16 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by OwnersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"16"}
+  [1m[36mOwner Load (1.7ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? ORDER BY "owners"."id" ASC LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mOwner Load (2.2ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/owners_controller.rb:64:in `set_owner'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owners_controller.rb:53:in `destroy'
+  [1m[36mBaseMenu Load (9.9ms)[0m  [1m[34mSELECT "base_menus".* FROM "base_menus" WHERE "base_menus"."owner_id" = ?[0m  [["owner_id", 16]]
+  ↳ app/controllers/owners_controller.rb:53:in `destroy'
+  [1m[36mOwner Destroy (3.7ms)[0m  [1m[31mDELETE FROM "owners" WHERE "owners"."id" = ?[0m  [["id", 16]]
+  ↳ app/controllers/owners_controller.rb:53:in `destroy'
+  [1m[36mTRANSACTION (20.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/owners_controller.rb:53:in `destroy'
+Redirected to http://localhost:3000/owners
+Completed 303 See Other in 161ms (ActiveRecord: 38.7ms | Allocations: 3803)
+
+
+Started GET "/owners" for 172.17.0.1 at 2024-12-03 20:16:17 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by OwnersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owners/index.html.erb within layouts/application
+  [1m[36mOwner Exists? (8.8ms)[0m  [1m[34mSELECT 1 AS one FROM "owners" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/owners/index.html.erb:7
+  [1m[36mOwner Load (2.0ms)[0m  [1m[34mSELECT "owners".* FROM "owners"[0m
+  ↳ app/views/owners/index.html.erb:8
+  Rendered owners/index.html.erb within layouts/application (Duration: 32.5ms | Allocations: 1137)
+  [1m[36mOwner Load (1.8ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? ORDER BY "owners"."id" ASC LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:65
+  Rendered layout layouts/application.html.erb (Duration: 60.7ms | Allocations: 2128)
+Completed 200 OK in 74ms (Views: 52.4ms | ActiveRecord: 12.4ms | Allocations: 2380)
+
+
+Started GET "/owners/15" for 172.17.0.1 at 2024-12-03 20:16:21 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by OwnersController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mOwner Load (3.0ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/owners_controller.rb:64:in `set_owner'
+  Rendering layout layouts/application.html.erb
+  Rendering owners/show.html.erb within layouts/application
+  Rendered owners/show.html.erb within layouts/application (Duration: 5.6ms | Allocations: 440)
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | Allocations: 890)
+Completed 200 OK in 56ms (Views: 32.4ms | ActiveRecord: 2.9ms | Allocations: 1475)
+
+
+Started GET "/owners/13" for 172.17.0.1 at 2024-12-03 20:17:15 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by OwnersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mOwner Load (1.7ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/owners_controller.rb:64:in `set_owner'
+  Rendering layout layouts/application.html.erb
+  Rendering owners/show.html.erb within layouts/application
+  Rendered owners/show.html.erb within layouts/application (Duration: 26.5ms | Allocations: 410)
+  Rendered layout layouts/application.html.erb (Duration: 34.9ms | Allocations: 860)
+Completed 200 OK in 60ms (Views: 40.0ms | ActiveRecord: 1.6ms | Allocations: 1444)
+
+
+Started GET "/owners/13/base_menus" for 172.17.0.1 at 2024-12-03 20:18:15 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BaseMenusController#index as HTML
+  Parameters: {"owner_id"=>"13"}
+  [1m[36mOwner Load (1.0ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/base_menus_controller.rb:65:in `get_owner'
+  Rendering layout layouts/application.html.erb
+  Rendering base_menus/index.html.erb within layouts/application
+  [1m[36mBaseMenu Load (1.8ms)[0m  [1m[34mSELECT "base_menus".* FROM "base_menus" WHERE "base_menus"."owner_id" = ?[0m  [["owner_id", 13]]
+  ↳ app/views/base_menus/index.html.erb:7
+  Rendered base_menus/index.html.erb within layouts/application (Duration: 18.6ms | Allocations: 910)
+  Rendered layout layouts/application.html.erb (Duration: 31.8ms | Allocations: 1360)
+Completed 200 OK in 62ms (Views: 37.1ms | ActiveRecord: 2.7ms | Allocations: 1972)
+
+
+Started GET "/owners/13/base_menus/7" for 172.17.0.1 at 2024-12-03 20:18:51 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BaseMenusController#show as HTML
+  Parameters: {"owner_id"=>"13", "id"=>"7"}
+  [1m[36mOwner Load (0.8ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/base_menus_controller.rb:65:in `get_owner'
+  [1m[36mBaseMenu Load (0.9ms)[0m  [1m[34mSELECT "base_menus".* FROM "base_menus" WHERE "base_menus"."owner_id" = ? AND "base_menus"."id" = ? LIMIT ?[0m  [["owner_id", 13], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/base_menus_controller.rb:69:in `set_base_menu'
+  Rendering layout layouts/application.html.erb
+  Rendering base_menus/show.html.erb within layouts/application
+  [1m[36mMenuItem Exists? (2.2ms)[0m  [1m[34mSELECT 1 AS one FROM "menu_items" WHERE "menu_items"."base_menu_id" = ? LIMIT ?[0m  [["base_menu_id", 7], ["LIMIT", 1]]
+  ↳ app/views/base_menus/show.html.erb:8
+  [1m[36mMenuItem Load (5.0ms)[0m  [1m[34mSELECT "menu_items".* FROM "menu_items" WHERE "menu_items"."base_menu_id" = ?[0m  [["base_menu_id", 7]]
+  ↳ app/views/base_menus/show.html.erb:10
+  Rendered base_menus/show.html.erb within layouts/application (Duration: 57.9ms | Allocations: 2235)
+  Rendered layout layouts/application.html.erb (Duration: 66.3ms | Allocations: 2685)
+Completed 200 OK in 106ms (Views: 64.0ms | ActiveRecord: 8.8ms | Allocations: 3919)
+
+
+Started GET "/owners" for 172.17.0.1 at 2024-12-03 21:10:54 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (14.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OwnersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owners/index.html.erb within layouts/application
+  [1m[36mOwner Exists? (12.0ms)[0m  [1m[34mSELECT 1 AS one FROM "owners" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/owners/index.html.erb:7
+  [1m[36mOwner Load (1.7ms)[0m  [1m[34mSELECT "owners".* FROM "owners"[0m
+  ↳ app/views/owners/index.html.erb:8
+  Rendered owners/index.html.erb within layouts/application (Duration: 268.7ms | Allocations: 11999)
+  Rendered layout layouts/application.html.erb (Duration: 302.0ms | Allocations: 13311)
+Completed 200 OK in 4591ms (Views: 189.6ms | ActiveRecord: 188.0ms | Allocations: 300252)
+
+
+Started GET "/owners/13" for 172.17.0.1 at 2024-12-03 21:16:12 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by OwnersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mOwner Load (27.9ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/owners_controller.rb:64:in `set_owner'
+  Rendering layout layouts/application.html.erb
+  Rendering owners/show.html.erb within layouts/application
+  Rendered owners/show.html.erb within layouts/application (Duration: 136.4ms | Allocations: 692)
+  Rendered layout layouts/application.html.erb (Duration: 178.6ms | Allocations: 1142)
+Completed 200 OK in 797ms (Views: 207.9ms | ActiveRecord: 27.3ms | Allocations: 4993)
+
+
+Started GET "/owners/13/base_menus" for 172.17.0.1 at 2024-12-03 21:16:20 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BaseMenusController#index as HTML
+  Parameters: {"owner_id"=>"13"}
+  [1m[36mOwner Load (4.8ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/base_menus_controller.rb:65:in `get_owner'
+  Rendering layout layouts/application.html.erb
+  Rendering base_menus/index.html.erb within layouts/application
+  [1m[36mBaseMenu Load (3.6ms)[0m  [1m[34mSELECT "base_menus".* FROM "base_menus" WHERE "base_menus"."owner_id" = ?[0m  [["owner_id", 13]]
+  ↳ app/views/base_menus/index.html.erb:7
+  Rendered base_menus/index.html.erb within layouts/application (Duration: 301.0ms | Allocations: 7384)
+  Rendered layout layouts/application.html.erb (Duration: 314.6ms | Allocations: 7840)
+Completed 200 OK in 841ms (Views: 328.2ms | ActiveRecord: 21.2ms | Allocations: 11715)
+
+
+Started GET "/owners/13/base_menus/7" for 172.17.0.1 at 2024-12-03 21:16:27 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BaseMenusController#show as HTML
+  Parameters: {"owner_id"=>"13", "id"=>"7"}
+  [1m[36mOwner Load (5.7ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/base_menus_controller.rb:65:in `get_owner'
+  [1m[36mBaseMenu Load (5.3ms)[0m  [1m[34mSELECT "base_menus".* FROM "base_menus" WHERE "base_menus"."owner_id" = ? AND "base_menus"."id" = ? LIMIT ?[0m  [["owner_id", 13], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/base_menus_controller.rb:69:in `set_base_menu'
+  Rendering layout layouts/application.html.erb
+  Rendering base_menus/show.html.erb within layouts/application
+  [1m[36mMenuItem Exists? (3.1ms)[0m  [1m[34mSELECT 1 AS one FROM "menu_items" WHERE "menu_items"."base_menu_id" = ? LIMIT ?[0m  [["base_menu_id", 7], ["LIMIT", 1]]
+  ↳ app/views/base_menus/show.html.erb:8
+  [1m[36mMenuItem Load (2.2ms)[0m  [1m[34mSELECT "menu_items".* FROM "menu_items" WHERE "menu_items"."base_menu_id" = ?[0m  [["base_menu_id", 7]]
+  ↳ app/views/base_menus/show.html.erb:10
+  Rendered base_menus/show.html.erb within layouts/application (Duration: 479.5ms | Allocations: 11627)
+  Rendered layout layouts/application.html.erb (Duration: 493.7ms | Allocations: 12080)
+Completed 200 OK in 664ms (Views: 489.7ms | ActiveRecord: 25.8ms | Allocations: 13499)
+
+

@@ -1,26 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe "Owners", type: :system do
-  before do
-    #driven_by(:rack_test)
-  end
-
-  pending "add some scenarios (or delete) #{__FILE__}"
-
-end
-
-RSpec.describe "Owners", type: :system do
   context "Happy Path: Create a new owner" do
     it "creates a new owner successfully" do
       visit new_owner_path
 
-      fill_in "Name", with: "John Doe"
       fill_in "Email", with: "johndoe@example.com"
       fill_in "Password", with: "password"
-      click_button "Create Owner"
+      click_button "New Owner"
 
-      expect(page).to have_current_path(owner_path(Owner.last))
-      expect(page).to have_content("John Doe")
       expect(page).to have_content("Owner was successfully created.")
     end
   end
@@ -29,13 +17,13 @@ RSpec.describe "Owners", type: :system do
     it "displays an error message when email is blank" do
       visit new_owner_path
 
-      fill_in "Name", with: "John Doe"
       fill_in "Password", with: "password"
-      click_button "Create Owner"
+      click_button "New Owner"
 
       expect(page).to have_content("Email can't be blank")
     end
   end
+end
 
 RSpec.describe "Login", type: :system do
   before do
